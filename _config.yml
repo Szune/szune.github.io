@@ -1,2 +1,3 @@
-	name: Erik - cyberspacer
-	markdown: kramdown
+name: Erik - cyberspacer
+markdown: kramdown
+permalink: /blog/:year/:month/:day/:title
