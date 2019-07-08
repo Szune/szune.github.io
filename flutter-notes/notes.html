@@ -2,23 +2,23 @@
 <hr><br/>
 <h1 id="Widget types">2. Widget types</h1><hr><b>MaterialApp&nbsp;</b><br/>&nbsp;<i>&nbsp;Base&nbsp;widget&nbsp;for&nbsp;Material&nbsp;Design&nbsp;apps,&nbsp;use&nbsp;home&nbsp;property&nbsp;for&nbsp;content,&nbsp;theme&nbsp;property&nbsp;for&nbsp;setting&nbsp;dark&nbsp;or&nbsp;light&nbsp;theme</i><br/><b>SafeArea&nbsp;</b><br/>&nbsp;<i>&nbsp;container&nbsp;whose&nbsp;children&nbsp;aren't&nbsp;hidden&nbsp;by&nbsp;any&nbsp;bezel&nbsp;or&nbsp;border&nbsp;(as&nbsp;can&nbsp;be&nbsp;seen&nbsp;if&nbsp;your&nbsp;main&nbsp;container</i><br/><i>&nbsp;	is a Container and the first child is a Text, it'll show up in right at the top and likely be at least partly hidden)</i><br/><b>LinearProgressIndicator&nbsp;</b><br/>&nbsp;<i>&nbsp;progress&nbsp;bar</i><br/><b>Row&nbsp;</b><br/>&nbsp;<i>&nbsp;Stacking&nbsp;children&nbsp;horizontally</i><br/><b>Column&nbsp;</b><br/>&nbsp;<i>&nbsp;Stacking&nbsp;children&nbsp;vertically&nbsp;(verticalDirection&nbsp;changes&nbsp;whether&nbsp;stacking&nbsp;down&nbsp;from&nbsp;top&nbsp;of&nbsp;parent&nbsp;or&nbsp;up&nbsp;from&nbsp;bottom&nbsp;of&nbsp;parent)</i><br/><i>&nbsp;		** Column and Row all have the same properties, so if you want to change from a Column to a Row,</i><br/><i>&nbsp;		** all you need to do is to change the Widget type from Column to Row, leaving everything else unchanged</i><br/><b>Stack&nbsp;</b><br/>&nbsp;<i>&nbsp;Stacking&nbsp;items&nbsp;on&nbsp;top&nbsp;of&nbsp;each&nbsp;other</i><br/><b>Padding&nbsp;</b><br/>&nbsp;<i>&nbsp;Padding</i><br/><b>Center&nbsp;</b><br/>&nbsp;<i>&nbsp;Center</i><br/><b>Image&nbsp;</b><br/>&nbsp;<i>&nbsp;Image</i><br/><i>&nbsp;Image(</i><br/><i>&nbsp;&nbsp;&nbsp;&nbsp;image:</i><br/><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AssetImage('images/diamond.png'),&nbsp;-&gt;&nbsp;can&nbsp;be&nbsp;written&nbsp;as&nbsp;Image.asset('path')</i><br/><i>&nbsp;Image(</i><br/><i>&nbsp;&nbsp;&nbsp;&nbsp;image:</i><br/><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NetworkImage('https://www.w3schools.com/howto/img_lights.jpg'),&nbsp;-&gt;&nbsp;can&nbsp;be&nbsp;written&nbsp;as&nbsp;Image.network('url')</i><br/><b>Container&nbsp;</b><br/>&nbsp;<i>&nbsp;Container&nbsp;(has&nbsp;properties:&nbsp;margin,&nbsp;padding,&nbsp;width,&nbsp;height,&nbsp;background&nbsp;color&nbsp;etc)</i><br/>		**&nbsp;Containers&nbsp;without&nbsp;a&nbsp;child&nbsp;take&nbsp;up&nbsp;as&nbsp;much&nbsp;space&nbsp;as&nbsp;they&nbsp;can&nbsp;<br/>
 		**&nbsp;Containers&nbsp;that&nbsp;do&nbsp;have&nbsp;a&nbsp;child&nbsp;will&nbsp;be&nbsp;sized&nbsp;after&nbsp;the&nbsp;child&nbsp;(unless&nbsp;padding/width/height&nbsp;is&nbsp;specified)<br/>
-<b>Icon&nbsp;</b><br/>&nbsp;<i>&nbsp;Icon</i><br/><b>CircleAvatar&nbsp;</b><br/>&nbsp;<i>&nbsp;A&nbsp;circle&nbsp;that&nbsp;represents&nbsp;a&nbsp;user,&nbsp;typically&nbsp;an&nbsp;image&nbsp;or&nbsp;the&nbsp;user's&nbsp;initials&nbsp;(with&nbsp;a&nbsp;bg&nbsp;color)</i><br/><b>Card&nbsp;</b><br/>&nbsp;<i>&nbsp;A&nbsp;card&nbsp;is&nbsp;a&nbsp;sheet&nbsp;of&nbsp;Material&nbsp;that&nbsp;represents&nbsp;some&nbsp;related&nbsp;information,&nbsp;an&nbsp;album,&nbsp;contact&nbsp;details&nbsp;etc</i><br/><b>ListTile&nbsp;</b><br/>&nbsp;<i>&nbsp;Useful&nbsp;for&nbsp;showing&nbsp;information&nbsp;inside&nbsp;a&nbsp;Card,&nbsp;can&nbsp;have&nbsp;a&nbsp;leading&nbsp;icon&nbsp;or&nbsp;a&nbsp;trailing&nbsp;icon&nbsp;and&nbsp;a&nbsp;title,</i><br/><i>&nbsp;	ListTile has onTap() function, could be used to show available upgrades and tapping performs the upgrade</i><br/><i>&nbsp;	Sample 3 on the documents shows how to make the leading/trailing icon tappable, so that tapping the entire thing upgrades,</i><br/><i>&nbsp;	tapping the trailing icon shows info about the upgrade? The title Text can be wrapped in a GestureDetector so it can be tapped as well</i><br/><b>ListView&nbsp;</b><br/>&nbsp;<i>&nbsp;A&nbsp;scrollable&nbsp;list&nbsp;of&nbsp;widgets&nbsp;arranged&nbsp;linearly,&nbsp;ListTiles&nbsp;are&nbsp;useful&nbsp;as&nbsp;child&nbsp;widgets&nbsp;of&nbsp;a&nbsp;ListView</i><br/><b>Divider&nbsp;</b><br/>&nbsp;<i>&nbsp;Horizontal&nbsp;rule&nbsp;(hr&nbsp;tag&nbsp;in&nbsp;html),&nbsp;one&nbsp;pixel&nbsp;divider</i><br/><b>Expanded&nbsp;</b><br/>&nbsp;<i>&nbsp;A&nbsp;widget&nbsp;that&nbsp;can&nbsp;only&nbsp;be&nbsp;used&nbsp;as&nbsp;a&nbsp;child&nbsp;of&nbsp;Row/Container/Flex,&nbsp;wrapping&nbsp;an&nbsp;Image&nbsp;inside&nbsp;an&nbsp;Expanded&nbsp;widget&nbsp;inside&nbsp;a&nbsp;Column</i><br/><i>&nbsp;	will make that Image expand to fill the available space on its main axis. If multiple children, available space is divided between</i><br/><i>&nbsp;	them according to the 'flex' factor, kind of reminiscent of XAML's GridColumn Width="2*", where "*" equals flex: 1.0</i><br/><b>FlatButton&nbsp;</b><br/>&nbsp;<i>&nbsp;A&nbsp;flat&nbsp;button</i><br/><b>RaisedButton&nbsp;</b><br/>&nbsp;<i>&nbsp;A&nbsp;raised&nbsp;button</i><br/><b>RawMaterialButton&nbsp;</b><br/>&nbsp;<i>&nbsp;Base&nbsp;class&nbsp;for&nbsp;a&nbsp;FloatingActionButton</i><br/><b>BoxDecoration&nbsp;</b><br/>&nbsp;<i>&nbsp;can&nbsp;be&nbsp;used&nbsp;to&nbsp;set&nbsp;a&nbsp;background&nbsp;image&nbsp;for&nbsp;a&nbsp;Container&nbsp;(use&nbsp;DecorationImage,&nbsp;with&nbsp;DecorationImage's&nbsp;image&nbsp;set&nbsp;to&nbsp;an&nbsp;AssetImage),&nbsp;use&nbsp;fit:&nbsp;BoxFit.cover&nbsp;to&nbsp;make&nbsp;it&nbsp;fill&nbsp;the&nbsp;entire&nbsp;screen</i><br/><b>Visibility&nbsp;</b><br/>&nbsp;<i>&nbsp;A&nbsp;widget&nbsp;used&nbsp;to&nbsp;wrap&nbsp;widgets&nbsp;that&nbsp;need&nbsp;to&nbsp;be&nbsp;hidden&nbsp;or&nbsp;shown&nbsp;depending&nbsp;on&nbsp;dynamic&nbsp;factors</i><br/><b>AnimatedSwitcher&nbsp;</b><br/>&nbsp;<i>&nbsp;A&nbsp;widget&nbsp;which&nbsp;can&nbsp;fade&nbsp;from&nbsp;one&nbsp;child&nbsp;to&nbsp;the&nbsp;next&nbsp;as&nbsp;the&nbsp;subtree&nbsp;changes</i><br/><b>AnimatedCrossFade&nbsp;</b><br/>&nbsp;<i>&nbsp;A&nbsp;widget&nbsp;which&nbsp;can&nbsp;fade&nbsp;between&nbsp;two&nbsp;specific&nbsp;children</i><br/><b>Slider&nbsp;</b><br/>&nbsp;<i>&nbsp;A&nbsp;draggable&nbsp;slider,&nbsp;*requires&nbsp;the&nbsp;onChanged&nbsp;property&nbsp;to&nbsp;call&nbsp;setState()&nbsp;in&nbsp;its&nbsp;callback,&nbsp;try&nbsp;changing&nbsp;activeColor&nbsp;and&nbsp;inactiveColor&nbsp;if&nbsp;it's&nbsp;still&nbsp;not&nbsp;visible*</i><br/><b>TextField&nbsp;</b><br/>&nbsp;<i>&nbsp;A&nbsp;simple&nbsp;text&nbsp;input&nbsp;widget:</i><br/>{c}TextField(onChanged:&nbsp;(value)&nbsp;{&nbsp;print(value);&nbsp;},<br/>
+<b>Icon&nbsp;</b><br/>&nbsp;<i>&nbsp;Icon</i><br/><b>CircleAvatar&nbsp;</b><br/>&nbsp;<i>&nbsp;A&nbsp;circle&nbsp;that&nbsp;represents&nbsp;a&nbsp;user,&nbsp;typically&nbsp;an&nbsp;image&nbsp;or&nbsp;the&nbsp;user's&nbsp;initials&nbsp;(with&nbsp;a&nbsp;bg&nbsp;color)</i><br/><b>Card&nbsp;</b><br/>&nbsp;<i>&nbsp;A&nbsp;card&nbsp;is&nbsp;a&nbsp;sheet&nbsp;of&nbsp;Material&nbsp;that&nbsp;represents&nbsp;some&nbsp;related&nbsp;information,&nbsp;an&nbsp;album,&nbsp;contact&nbsp;details&nbsp;etc</i><br/><b>ListTile&nbsp;</b><br/>&nbsp;<i>&nbsp;Useful&nbsp;for&nbsp;showing&nbsp;information&nbsp;inside&nbsp;a&nbsp;Card,&nbsp;can&nbsp;have&nbsp;a&nbsp;leading&nbsp;icon&nbsp;or&nbsp;a&nbsp;trailing&nbsp;icon&nbsp;and&nbsp;a&nbsp;title,</i><br/><i>&nbsp;	ListTile has onTap() function, could be used to show available upgrades and tapping performs the upgrade</i><br/><i>&nbsp;	Sample 3 on the documents shows how to make the leading/trailing icon tappable, so that tapping the entire thing upgrades,</i><br/><i>&nbsp;	tapping the trailing icon shows info about the upgrade? The title Text can be wrapped in a GestureDetector so it can be tapped as well</i><br/><b>ListView&nbsp;</b><br/>&nbsp;<i>&nbsp;A&nbsp;scrollable&nbsp;list&nbsp;of&nbsp;widgets&nbsp;arranged&nbsp;linearly,&nbsp;ListTiles&nbsp;are&nbsp;useful&nbsp;as&nbsp;child&nbsp;widgets&nbsp;of&nbsp;a&nbsp;ListView</i><br/><b>Divider&nbsp;</b><br/>&nbsp;<i>&nbsp;Horizontal&nbsp;rule&nbsp;(hr&nbsp;tag&nbsp;in&nbsp;html),&nbsp;one&nbsp;pixel&nbsp;divider</i><br/><b>Expanded&nbsp;</b><br/>&nbsp;<i>&nbsp;A&nbsp;widget&nbsp;that&nbsp;can&nbsp;only&nbsp;be&nbsp;used&nbsp;as&nbsp;a&nbsp;child&nbsp;of&nbsp;Row/Container/Flex,&nbsp;wrapping&nbsp;an&nbsp;Image&nbsp;inside&nbsp;an&nbsp;Expanded&nbsp;widget&nbsp;inside&nbsp;a&nbsp;Column</i><br/><i>&nbsp;	will make that Image expand to fill the available space on its main axis. If multiple children, available space is divided between</i><br/><i>&nbsp;	them according to the 'flex' factor, kind of reminiscent of XAML's GridColumn Width="2*", where "*" equals flex: 1.0</i><br/><b>FlatButton&nbsp;</b><br/>&nbsp;<i>&nbsp;A&nbsp;flat&nbsp;button</i><br/><b>RaisedButton&nbsp;</b><br/>&nbsp;<i>&nbsp;A&nbsp;raised&nbsp;button</i><br/><b>RawMaterialButton&nbsp;</b><br/>&nbsp;<i>&nbsp;Base&nbsp;class&nbsp;for&nbsp;a&nbsp;FloatingActionButton</i><br/><b>BoxDecoration&nbsp;</b><br/>&nbsp;<i>&nbsp;can&nbsp;be&nbsp;used&nbsp;to&nbsp;set&nbsp;a&nbsp;background&nbsp;image&nbsp;for&nbsp;a&nbsp;Container&nbsp;(use&nbsp;DecorationImage,&nbsp;with&nbsp;DecorationImage's&nbsp;image&nbsp;set&nbsp;to&nbsp;an&nbsp;AssetImage),&nbsp;use&nbsp;fit:&nbsp;BoxFit.cover&nbsp;to&nbsp;make&nbsp;it&nbsp;fill&nbsp;the&nbsp;entire&nbsp;screen</i><br/><b>Visibility&nbsp;</b><br/>&nbsp;<i>&nbsp;A&nbsp;widget&nbsp;used&nbsp;to&nbsp;wrap&nbsp;widgets&nbsp;that&nbsp;need&nbsp;to&nbsp;be&nbsp;hidden&nbsp;or&nbsp;shown&nbsp;depending&nbsp;on&nbsp;dynamic&nbsp;factors</i><br/><b>AnimatedSwitcher&nbsp;</b><br/>&nbsp;<i>&nbsp;A&nbsp;widget&nbsp;which&nbsp;can&nbsp;fade&nbsp;from&nbsp;one&nbsp;child&nbsp;to&nbsp;the&nbsp;next&nbsp;as&nbsp;the&nbsp;subtree&nbsp;changes</i><br/><b>AnimatedCrossFade&nbsp;</b><br/>&nbsp;<i>&nbsp;A&nbsp;widget&nbsp;which&nbsp;can&nbsp;fade&nbsp;between&nbsp;two&nbsp;specific&nbsp;children</i><br/><b>Slider&nbsp;</b><br/>&nbsp;<i>&nbsp;A&nbsp;draggable&nbsp;slider,&nbsp;*requires&nbsp;the&nbsp;onChanged&nbsp;property&nbsp;to&nbsp;call&nbsp;setState()&nbsp;in&nbsp;its&nbsp;callback,&nbsp;try&nbsp;changing&nbsp;activeColor&nbsp;and&nbsp;inactiveColor&nbsp;if&nbsp;it's&nbsp;still&nbsp;not&nbsp;visible*</i><br/><b>TextField&nbsp;</b><br/>&nbsp;<i>&nbsp;A&nbsp;simple&nbsp;text&nbsp;input&nbsp;widget:</i><br/><blockquote style="border: 1px solid black; padding: 5px; background-color: #FFFFEE; font-style: italic;">TextField(onChanged:&nbsp;(value)&nbsp;<maroon>{</maroon>&nbsp;<blue>print</blue>(value);&nbsp;<maroon>}</maroon>,<br/>
 style:&nbsp;TextStyle(color:&nbsp;Colors.black,),<br/>
-decoration:&nbsp;InputDecoration(filled:&nbsp;true,<br/>
+decoration:&nbsp;InputDecoration(filled:<blue>&nbsp;true</blue>,<br/>
 fillColor:&nbsp;Colors.white,<br/>
 icon:&nbsp;Icon(Icons.location_city,&nbsp;color:&nbsp;Colors.white),<br/>
-hintText:&nbsp;'Enter&nbsp;City&nbsp;Name',<br/>
+hintText:&nbsp;<orange>'Enter&nbsp;City&nbsp;Name'</orange>,<br/>
 hintStyle:&nbsp;TextStyle(color:&nbsp;Colors.grey),<br/>
 border:&nbsp;OutlineInputBorder(<br/>
 borderRadius:&nbsp;BorderRadius.all(<br/>
 Radius.circular(10.0),),<br/>
 borderSide:&nbsp;BorderSide.none<br/>
-),),),{/c}<br/>
-<b>DropdownButton&nbsp;</b><br/>&nbsp;<i>&nbsp;button&nbsp;that&nbsp;opens&nbsp;a&nbsp;dropdown&nbsp;menu&nbsp;and&nbsp;lets&nbsp;the&nbsp;user&nbsp;select&nbsp;an&nbsp;item,</i><br/><i>&nbsp;for implementation, see docs: <a href="https://api.flutter.dev/flutter/material/DropdownButton-class.html">https://api.flutter.dev/flutter/material/DropdownButton-class.html</a></i><br/>{c}const&nbsp;List&lt;String&gt;&nbsp;currencies&nbsp;=&nbsp;['USD',&nbsp;'AUD',&nbsp;'CAD',&nbsp;'SEK'];<br/>
-String&nbsp;selectedCurrency&nbsp;=&nbsp;currencies.first;<br/>
-DropdownButton&lt;String&gt;(<br/>
-<i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value:&nbsp;selectedCurrency,</i><br/><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;items:&nbsp;currencies</i><br/><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.map&lt;DropdownMenuItem&lt;String&gt;&gt;((value)&nbsp;=&gt;</i><br/><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DropdownMenuItem&lt;String&gt;(</i><br/><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value:&nbsp;value,</i><br/><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;child:&nbsp;Text(value),</i><br/><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)).toList(),</i><br/><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;onChanged:&nbsp;(value)&nbsp;{</i><br/><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;setState(()&nbsp;{</i><br/><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;selectedCurrency&nbsp;=&nbsp;value;</i><br/><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});</i><br/><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}),{/c}</i><br/><b>Alternative&nbsp;way:</b>{c}DropdownButton&lt;String&gt;(<br/>
-<i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value:&nbsp;selectedCurrency,</i><br/><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;items:&nbsp;[</i><br/><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;(String&nbsp;c&nbsp;in&nbsp;currenciesList)</i><br/><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DropdownMenuItem&lt;String&gt;(value:&nbsp;c,&nbsp;child:&nbsp;Text(c))</i><br/><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;],</i><br/><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;onChanged:&nbsp;(value)&nbsp;{</i><br/><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;setState(()&nbsp;{</i><br/><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;selectedCurrency&nbsp;=&nbsp;value;</i><br/><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});</i><br/><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}),{/c}</i><br/><hr><br/>
+),),),</blockquote><br/>
+<b>DropdownButton&nbsp;</b><br/>&nbsp;<i>&nbsp;button&nbsp;that&nbsp;opens&nbsp;a&nbsp;dropdown&nbsp;menu&nbsp;and&nbsp;lets&nbsp;the&nbsp;user&nbsp;select&nbsp;an&nbsp;item,</i><br/><i>&nbsp;for implementation, see docs: <a href="https://api.flutter.dev/flutter/material/DropdownButton-class.html">https://api.flutter.dev/flutter/material/DropdownButton-class.html</a></i><br/><blockquote style="border: 1px solid black; padding: 5px; background-color: #FFFFEE; font-style: italic;"><red>const&nbsp;</red><red>List</red>&lt;<blue>String</blue>&gt;&nbsp;currencies&nbsp;=&nbsp;[<orange>'USD'</orange>,&nbsp;<orange>'AUD'</orange>,&nbsp;<orange>'CAD'</orange>,&nbsp;<orange>'SEK'</orange>];<br/>
+<blue>String</blue>&nbsp;selectedCurrency&nbsp;=&nbsp;currencies.first;<br/>
+DropdownButton&lt;<blue>String</blue>&gt;(<br/>
+<i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value:&nbsp;selectedCurrency,</i><br/><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;items:&nbsp;currencies</i><br/><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.map&lt;DropdownMenuItem&lt;<blue>String</blue>&gt;&gt;((value)&nbsp;=&gt;</i><br/><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DropdownMenuItem&lt;<blue>String</blue>&gt;(</i><br/><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value:&nbsp;value,</i><br/><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;child:&nbsp;Text(value),</i><br/><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)).to<red>List</red>(),</i><br/><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;onChanged:&nbsp;(value)&nbsp;<maroon>{</maroon></i><br/><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;setState(()&nbsp;<maroon>{</maroon></i><br/><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;selectedCurrency&nbsp;=&nbsp;value;</i><br/><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<maroon>}</maroon>);</i><br/><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<maroon>}</maroon>),</blockquote></i><br/><b>Alternative&nbsp;way:</b><blockquote style="border: 1px solid black; padding: 5px; background-color: #FFFFEE; font-style: italic;">DropdownButton&lt;<blue>String</blue>&gt;(<br/>
+<i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value:&nbsp;selectedCurrency,</i><br/><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;items:&nbsp;[</i><br/><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<blue>for&nbsp;</blue>(<blue>String</blue>&nbsp;c&nbsp;in&nbsp;currencies<red>List</red>)</i><br/><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DropdownMenuItem&lt;<blue>String</blue>&gt;(value:&nbsp;c,&nbsp;child:&nbsp;Text(c))</i><br/><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;],</i><br/><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;onChanged:&nbsp;(value)&nbsp;<maroon>{</maroon></i><br/><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;setState(()&nbsp;<maroon>{</maroon></i><br/><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;selectedCurrency&nbsp;=&nbsp;value;</i><br/><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<maroon>}</maroon>);</i><br/><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<maroon>}</maroon>),</blockquote></i><br/><hr><br/>
 <h1 id="Multi-Screen Apps Using Routes and Navigation">3. Multi-Screen Apps Using Routes and Navigation</h1><hr>In&nbsp;flutter,&nbsp;"screens"&nbsp;and&nbsp;"pages"&nbsp;are&nbsp;called&nbsp;"routes".<br/>
 <br/>
 <br/>
@@ -26,8 +26,8 @@ DropdownButton&lt;String&gt;(<br/>
 Set&nbsp;"initialRoute"&nbsp;for&nbsp;a&nbsp;different&nbsp;starting&nbsp;screen.<br/>
 <br/>
 When&nbsp;navigating&nbsp;using&nbsp;named&nbsp;routes,&nbsp;consider&nbsp;putting&nbsp;the&nbsp;route&nbsp;String&nbsp;inside&nbsp;its&nbsp;related&nbsp;class&nbsp;as&nbsp;a&nbsp;static&nbsp;const&nbsp;String&nbsp;property,&nbsp;e.g.:<br/>
-{c}class&nbsp;WelcomeScreen&nbsp;extends&nbsp;StatefulWidget&nbsp;{<br/>
-<i>&nbsp;&nbsp;&nbsp;&nbsp;static&nbsp;const&nbsp;String&nbsp;id&nbsp;=&nbsp;'welcome_screen';</i><br/>}{/c}<br/>
+<blockquote style="border: 1px solid black; padding: 5px; background-color: #FFFFEE; font-style: italic;"><blue>class&nbsp;</blue>WelcomeScreen&nbsp;<blue>extends&nbsp;</blue>StatefulWidget&nbsp;<maroon>{</maroon><br/>
+<i>&nbsp;&nbsp;&nbsp;&nbsp;<red>static&nbsp;</red><red>const&nbsp;</red><blue>String</blue>&nbsp;id&nbsp;=&nbsp;<orange>'welcome_screen'</orange>;</i><br/><maroon>}</maroon></blockquote><br/>
 And&nbsp;then&nbsp;accessing&nbsp;it&nbsp;through&nbsp;WelcomeScreen.id,&nbsp;so&nbsp;initialRoute:&nbsp;WelcomeScreen.id,<br/>
 <br/>
 <br/>
@@ -40,12 +40,12 @@ it&nbsp;returns&nbsp;a&nbsp;Future,&nbsp;which&nbsp;is&nbsp;awaitable,&nbsp;i.e.
 <br/>
 <b>Read&nbsp;more&nbsp;about&nbsp;navigation&nbsp;</b><br/>&nbsp;<i>&nbsp;<a href="https://flutter.dev/docs/cookbook/navigation/navigation-basics">https://flutter.dev/docs/cookbook/navigation/navigation-basics</a></i><br/><hr><br/>
 <h1 id="Android and iOS widget differences">4. Android and iOS widget differences</h1><hr>You&nbsp;can&nbsp;check&nbsp;the&nbsp;platform&nbsp;the&nbsp;app&nbsp;is&nbsp;running&nbsp;on&nbsp;by&nbsp;doing:<br/>
-{c}import&nbsp;'dart:io'&nbsp;show&nbsp;Platform;<br/>
-if&nbsp;(Platform.isIOS)&nbsp;{<br/>
+<blockquote style="border: 1px solid black; padding: 5px; background-color: #FFFFEE; font-style: italic;"><red>import&nbsp;</red><orange>'dart:io'</orange>&nbsp;<red>show&nbsp;</red>Platform;<br/>
+<blue>if&nbsp;</blue>(Platform.isIOS)&nbsp;<maroon>{</maroon><br/>
 	//&nbsp;do&nbsp;iOS&nbsp;stuff<br/>
-}&nbsp;else&nbsp;if&nbsp;(Platform.isAndroid)&nbsp;{<br/>
+<maroon>}</maroon>&nbsp;<blue>else&nbsp;</blue><blue>if&nbsp;</blue>(Platform.isAndroid)&nbsp;<maroon>{</maroon><br/>
 	//&nbsp;do&nbsp;android&nbsp;stuff<br/>
-}{/c}<br/>
+<maroon>}</maroon></blockquote><br/>
 Android&nbsp;|&nbsp;iOS<br/>
 <ul><li>DropdownButton | CupertinoPicker</li></ul><hr><br/>
 <h1 id="Android studio">5. Android studio</h1><hr><b>Alt+Enter&nbsp;</b><br/>&nbsp;<i>&nbsp;Like&nbsp;resharper's&nbsp;code&nbsp;refactoring&nbsp;(can&nbsp;surround&nbsp;current&nbsp;widget&nbsp;with&nbsp;a&nbsp;Center&nbsp;or&nbsp;another&nbsp;widget&nbsp;etc)</i><br/><br/>
@@ -133,11 +133,11 @@ Useful&nbsp;packages:<br/>
 <h1 id="Data types">24. Data types</h1><hr>String,&nbsp;int,&nbsp;double,&nbsp;bool,&nbsp;dynamic<br/>
 <b>List&lt;T&gt;&nbsp;</b><br/>&nbsp;<i>&nbsp;insert(),&nbsp;add(),&nbsp;addAll()&nbsp;indexOf(),&nbsp;access&nbsp;items&nbsp;by&nbsp;[]</i><br/><b>Read&nbsp;more&nbsp;about&nbsp;lists&nbsp;</b><br/>&nbsp;<i>&nbsp;<a href="https://dart.dev/guides/libraries/library-tour#collections">https://dart.dev/guides/libraries/library-tour#collections</a></i><br/><b>Map&lt;T1,&nbsp;T2&gt;&nbsp;</b><br/>&nbsp;<i>&nbsp;dictionary&nbsp;*note!*&nbsp;when&nbsp;accessing&nbsp;the&nbsp;Map&nbsp;with&nbsp;a&nbsp;key&nbsp;that&nbsp;doesn't&nbsp;exist,&nbsp;the&nbsp;map&nbsp;will&nbsp;return&nbsp;null.</i><br/><i>&nbsp;No&nbsp;exception&nbsp;will&nbsp;be&nbsp;thrown!&nbsp;e.g.&nbsp;Map&lt;String,int&gt;&nbsp;m&nbsp;=&nbsp;{'x':&nbsp;10};&nbsp;print(m['p']);&nbsp;//&nbsp;prints&nbsp;null</i><br/><i>&nbsp;Assigning&nbsp;to&nbsp;a&nbsp;new&nbsp;key&nbsp;can&nbsp;be&nbsp;done&nbsp;by&nbsp;writing&nbsp;for&nbsp;example&nbsp;m['y']&nbsp;=&nbsp;15;&nbsp;//&nbsp;assigns&nbsp;15&nbsp;to&nbsp;new&nbsp;key&nbsp;'y'&nbsp;in&nbsp;Map&nbsp;m</i><br/><i>&nbsp;Maps&nbsp;also&nbsp;have&nbsp;.keys&nbsp;and&nbsp;.values&nbsp;properties</i><br/><hr><br/>
 <h1 id="Function delegates">25. Function delegates</h1><hr>The&nbsp;"Function"&nbsp;type&nbsp;is&nbsp;a&nbsp;function&nbsp;delegate&nbsp;(i.e.&nbsp;basically&nbsp;Action&nbsp;in&nbsp;C#),&nbsp;can&nbsp;be&nbsp;used&nbsp;like&nbsp;this:<br/>
-{c}int&nbsp;calculate(int&nbsp;n1,&nbsp;int&nbsp;n2,&nbsp;Function&nbsp;calculation)&nbsp;{<br/>
-<i>&nbsp;&nbsp;&nbsp;return&nbsp;calculation(n1,&nbsp;n2);</i><br/><i>&nbsp;}</i><br/><i>&nbsp;//&nbsp;call&nbsp;calculate()</i><br/><i>&nbsp;print(calculate(10,&nbsp;15,&nbsp;add));</i><br/><i>&nbsp;print(calculate(10,&nbsp;15,&nbsp;multiply));</i><br/><br/>
-<i>&nbsp;int&nbsp;add(int&nbsp;n1,&nbsp;int&nbsp;n2)&nbsp;=&gt;&nbsp;n1&nbsp;+&nbsp;n2;</i><br/><i>&nbsp;int&nbsp;multiply(int&nbsp;n1,&nbsp;int&nbsp;n2)&nbsp;=&gt;&nbsp;n1&nbsp;*&nbsp;n2;{/c}</i><br/>And&nbsp;it&nbsp;can&nbsp;also&nbsp;be&nbsp;assigned&nbsp;to&nbsp;a&nbsp;variable:<br/>
-{c}//&nbsp;assign&nbsp;Function&nbsp;to&nbsp;a&nbsp;variable&nbsp;(end&nbsp;with&nbsp;semicolon&nbsp;even&nbsp;if&nbsp;using&nbsp;curly&nbsp;braces):<br/>
-<i>&nbsp;Function&nbsp;calculator&nbsp;=&nbsp;(int&nbsp;n1,&nbsp;int&nbsp;n2,&nbsp;Function&nbsp;calculation)&nbsp;=&gt;&nbsp;calculation(n1,&nbsp;n2);</i><br/><i>&nbsp;print(calculator(1,2,add));{/c}</i><br/><hr><br/>
+<blockquote style="border: 1px solid black; padding: 5px; background-color: #FFFFEE; font-style: italic;"><blue>int&nbsp;</blue>calculate(<blue>int&nbsp;</blue>n1,&nbsp;<blue>int&nbsp;</blue>n2,&nbsp;Function&nbsp;calculation)&nbsp;<maroon>{</maroon><br/>
+<i>&nbsp;&nbsp;&nbsp;<red>return&nbsp;</red>calculation(n1,&nbsp;n2);</i><br/><i>&nbsp;<maroon>}</maroon></i><br/><i>&nbsp;//&nbsp;call&nbsp;calculate()</i><br/><i>&nbsp;<blue>print</blue>(calculate(10,&nbsp;15,&nbsp;add));</i><br/><i>&nbsp;<blue>print</blue>(calculate(10,&nbsp;15,&nbsp;multiply));</i><br/><br/>
+<i>&nbsp;<blue>int&nbsp;</blue>add(<blue>int&nbsp;</blue>n1,&nbsp;<blue>int&nbsp;</blue>n2)&nbsp;=&gt;&nbsp;n1&nbsp;+&nbsp;n2;</i><br/><i>&nbsp;<blue>int&nbsp;</blue>multiply(<blue>int&nbsp;</blue>n1,&nbsp;<blue>int&nbsp;</blue>n2)&nbsp;=&gt;&nbsp;n1&nbsp;*&nbsp;n2;</blockquote></i><br/>And&nbsp;it&nbsp;can&nbsp;also&nbsp;be&nbsp;assigned&nbsp;to&nbsp;a&nbsp;variable:<br/>
+<blockquote style="border: 1px solid black; padding: 5px; background-color: #FFFFEE; font-style: italic;">//&nbsp;assign&nbsp;Function&nbsp;to&nbsp;a&nbsp;variable&nbsp;(end&nbsp;with&nbsp;semicolon&nbsp;even&nbsp;<blue>if&nbsp;</blue>using&nbsp;curly&nbsp;braces):<br/>
+<i>&nbsp;Function&nbsp;calculator&nbsp;=&nbsp;(<blue>int&nbsp;</blue>n1,&nbsp;<blue>int&nbsp;</blue>n2,&nbsp;Function&nbsp;calculation)&nbsp;=&gt;&nbsp;calculation(n1,&nbsp;n2);</i><br/><i>&nbsp;<blue>print</blue>(calculator(1,2,add));</blockquote></i><br/><hr><br/>
 <h1 id="constness/finalness">26. constness/finalness</h1><hr>The&nbsp;"final"&nbsp;keyword&nbsp;acts&nbsp;as&nbsp;readonly&nbsp;in&nbsp;C#,&nbsp;it&nbsp;is&nbsp;possible&nbsp;to&nbsp;set&nbsp;it&nbsp;through&nbsp;the&nbsp;constructor&nbsp;but&nbsp;not&nbsp;after&nbsp;the&nbsp;constructor&nbsp;has&nbsp;run,<br/>
 <i>&nbsp;i.e.&nbsp;it&nbsp;can&nbsp;only&nbsp;be&nbsp;set&nbsp;once</i><br/>e.g.&nbsp;final&nbsp;int&nbsp;x&nbsp;=&nbsp;1;<br/>
 or&nbsp;final&nbsp;int&nbsp;x;<br/>
@@ -171,65 +171,65 @@ but&nbsp;just&nbsp;as&nbsp;importantly,&nbsp;it&nbsp;gets&nbsp;access&nbsp;to&nb
 When&nbsp;we&nbsp;need&nbsp;to&nbsp;initialize&nbsp;a&nbsp;widget&nbsp;with&nbsp;some&nbsp;state&nbsp;passed&nbsp;through&nbsp;the&nbsp;constructor&nbsp;of&nbsp;LocationScreen,<br/>
 we&nbsp;can&nbsp;access&nbsp;that&nbsp;state&nbsp;in&nbsp;the&nbsp;_LocationScreenState&nbsp;by&nbsp;tapping&nbsp;into&nbsp;the&nbsp;'widget'&nbsp;property&nbsp;and&nbsp;finding&nbsp;the&nbsp;property&nbsp;we're&nbsp;looking&nbsp;for&nbsp;inside&nbsp;the&nbsp;LocationScreen&nbsp;instance.<br/>
 <br/>
-<b>Example:</b>{c}class&nbsp;LocationScreen&nbsp;extends&nbsp;StatefulWidget&nbsp;{<br/>
-<i>&nbsp;&nbsp;LocationScreen({this.locationWeather});</i><br/><i>&nbsp;&nbsp;final&nbsp;locationWeather;</i><br/><i>&nbsp;&nbsp;@override</i><br/><i>&nbsp;&nbsp;_LocationScreenState&nbsp;createState()&nbsp;=&gt;&nbsp;_LocationScreenState();</i><br/>}<br/>
+<b>Example:</b><blockquote style="border: 1px solid black; padding: 5px; background-color: #FFFFEE; font-style: italic;"><blue>class&nbsp;</blue>LocationScreen&nbsp;<blue>extends&nbsp;</blue>StatefulWidget&nbsp;<maroon>{</maroon><br/>
+<i>&nbsp;&nbsp;LocationScreen(<maroon>{</maroon><red>this</red>.locationWeather<maroon>}</maroon>);</i><br/><i>&nbsp;&nbsp;<red>final&nbsp;</red>locationWeather;</i><br/><i>&nbsp;&nbsp;<red>@override</red></i><br/><i>&nbsp;&nbsp;_LocationScreenState&nbsp;createState()&nbsp;=&gt;&nbsp;_LocationScreenState();</i><br/><maroon>}</maroon><br/>
 <br/>
-class&nbsp;_LocationScreenState&nbsp;extends&nbsp;State&lt;LocationScreen&gt;&nbsp;{<br/>
-<i>&nbsp;&nbsp;@override</i><br/><i>&nbsp;&nbsp;void&nbsp;initState()&nbsp;{</i><br/><i>&nbsp;&nbsp;&nbsp;&nbsp;super.initState();</i><br/><i>&nbsp;&nbsp;&nbsp;&nbsp;print(widget.locationWeather);&nbsp;//&nbsp;accessing&nbsp;the&nbsp;value&nbsp;passed&nbsp;into&nbsp;the&nbsp;widget</i><br/><i>&nbsp;&nbsp;}</i><br/><br/>
-<i>&nbsp;&nbsp;@override</i><br/><i>&nbsp;&nbsp;Widget&nbsp;build(BuildContext&nbsp;context)&nbsp;{</i><br/>	/*&nbsp;build&nbsp;code&nbsp;*/<br/>
-<i>&nbsp;&nbsp;}</i><br/>}<br/>
+<blue>class&nbsp;</blue>_LocationScreenState&nbsp;<blue>extends&nbsp;</blue>State&lt;LocationScreen&gt;&nbsp;<maroon>{</maroon><br/>
+<i>&nbsp;&nbsp;<red>@override</red></i><br/><i>&nbsp;&nbsp;<blue>void&nbsp;</blue>initState()&nbsp;<maroon>{</maroon></i><br/><i>&nbsp;&nbsp;&nbsp;&nbsp;<blue>super.</blue>initState();</i><br/><i>&nbsp;&nbsp;&nbsp;&nbsp;<blue>print</blue>(widget.locationWeather);&nbsp;//&nbsp;accessing&nbsp;the&nbsp;value&nbsp;passed&nbsp;into&nbsp;the&nbsp;widget</i><br/><i>&nbsp;&nbsp;<maroon>}</maroon></i><br/><br/>
+<i>&nbsp;&nbsp;<red>@override</red></i><br/><i>&nbsp;&nbsp;Widget&nbsp;build(BuildContext&nbsp;context)&nbsp;<maroon>{</maroon></i><br/>	/*&nbsp;build&nbsp;code&nbsp;*/<br/>
+<i>&nbsp;&nbsp;<maroon>}</maroon></i><br/><maroon>}</maroon><br/>
 <br/>
-{/c}<br/>
+</blockquote><br/>
 <hr><br/>
-<h1 id="async/await">29. async/await</h1><hr><b>Awaiting&nbsp;multiple&nbsp;async&nbsp;calls:</b>{c}&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;awaits&nbsp;=&nbsp;[for&nbsp;(CoinData&nbsp;c&nbsp;in&nbsp;coins)&nbsp;c.getCoinData(selectedCurrency)];<br/>
-<i>&nbsp;&nbsp;&nbsp;&nbsp;await&nbsp;Future.wait(awaits);{/c}</i><br/><b>Function&nbsp;example&nbsp;</b><br/>&nbsp;<i>&nbsp;<blockquote style="border: 1px solid black; padding: 5px; background-color: #FFFFEE; font-style: italic;"><red>Future</red>&lt;<blue>String</blue>&gt;&nbsp;doAsync()&nbsp;<red>async&nbsp;</red><maroon>{</maroon></i><br/><i>&nbsp;&nbsp;&nbsp;<blue>String</blue>&nbsp;result;</i><br/><i>&nbsp;&nbsp;&nbsp;<red>await&nbsp;</red><red>Future</red>.delayed(Duration(seconds:&nbsp;3),&nbsp;()&nbsp;<maroon>{</maroon></i><br/><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;result&nbsp;=&nbsp;<orange>"test"</orange>;</i><br/><i>&nbsp;&nbsp;&nbsp;<maroon>}</maroon>);</i><br/><i>&nbsp;&nbsp;&nbsp;<red>return&nbsp;</red>result;</i><br/><i>&nbsp;<maroon>}</maroon></blockquote></i><br/><b>Function&nbsp;signature&nbsp;</b><br/>&nbsp;<i>&nbsp;Future&lt;void&gt;&nbsp;doAsync(int&nbsp;stuff)&nbsp;async&nbsp;{&nbsp;}</i><br/><b>Awaiting&nbsp;async&nbsp;function&nbsp;call&nbsp;</b><br/>&nbsp;<i>&nbsp;await&nbsp;doAsync();</i><br/><b>Asynchronous&nbsp;sleep&nbsp;function&nbsp;</b><br/>&nbsp;<i>&nbsp;await&nbsp;Future.delayed(duration,&nbsp;callback);</i><br/><b>Callback&nbsp;function&nbsp;signature&nbsp;(lambda/anonymous&nbsp;function?)&nbsp;</b><br/>&nbsp;<i>&nbsp;()&nbsp;async&nbsp;{&nbsp;await&nbsp;doThing();&nbsp;}</i><br/><hr><br/>
-<h1 id="Syntax">30. Syntax</h1><hr><b>List&nbsp;comprehension:</b>{c}var&nbsp;list1&nbsp;=&nbsp;[for&nbsp;(int&nbsp;x&nbsp;=&nbsp;0;&nbsp;x&nbsp;&lt;&nbsp;5;&nbsp;x++)&nbsp;if&nbsp;(x&nbsp;&lt;&nbsp;3)&nbsp;x&nbsp;*&nbsp;1.5&nbsp;else&nbsp;x&nbsp;*&nbsp;150];<br/>
-print(list1);&nbsp;//&nbsp;[0,&nbsp;1.5,&nbsp;3,&nbsp;450,&nbsp;600]<br/>
-var&nbsp;list2&nbsp;=&nbsp;[for&nbsp;(int&nbsp;x&nbsp;=&nbsp;0;&nbsp;x&nbsp;&lt;&nbsp;5;&nbsp;x++)&nbsp;if&nbsp;(x&nbsp;&gt;&nbsp;0&nbsp;&&&nbsp;x&nbsp;&lt;&nbsp;2)&nbsp;x];<br/>
-print(list2);&nbsp;//&nbsp;[1]<br/>
-[for&nbsp;(int&nbsp;x&nbsp;=&nbsp;0;&nbsp;x&nbsp;&lt;&nbsp;10;&nbsp;x++)&nbsp;print(x)];<br/>
-{/c}<br/>
-<b>Map&nbsp;comprehension:</b>{c}class&nbsp;Fruit&nbsp;{<br/>
-<i>&nbsp;&nbsp;Fruit(this.name,&nbsp;this.id);</i><br/><i>&nbsp;&nbsp;String&nbsp;name;</i><br/><i>&nbsp;&nbsp;int&nbsp;id;</i><br/>}<br/>
-var&nbsp;list&nbsp;=&nbsp;[Fruit('Banana',&nbsp;5),&nbsp;Fruit('Apple',&nbsp;6),&nbsp;Fruit('Rat',&nbsp;0)];<br/>
-var&nbsp;map&nbsp;=&nbsp;{for&nbsp;(Fruit&nbsp;f&nbsp;in&nbsp;list)&nbsp;'${f.id}':&nbsp;f.name};&nbsp;//&nbsp;if&nbsp;and/or&nbsp;else&nbsp;can&nbsp;be&nbsp;used&nbsp;here&nbsp;as&nbsp;well<br/>
-print(map);&nbsp;//&nbsp;{5:&nbsp;Banana,&nbsp;6:&nbsp;Apple,&nbsp;0:&nbsp;Rat}<br/>
-{/c}<br/>
-<b>Spreads:</b>{c}var&nbsp;otherList&nbsp;=&nbsp;[2,3,4];<br/>
-var&nbsp;list&nbsp;=&nbsp;[for&nbsp;(int&nbsp;x&nbsp;=&nbsp;0;&nbsp;x&nbsp;&lt;&nbsp;5;&nbsp;x++)&nbsp;if&nbsp;(x&nbsp;&gt;&nbsp;0&nbsp;&&&nbsp;x&nbsp;&lt;&nbsp;2)&nbsp;x,<br/>
-<i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...otherList];</i><br/>print(list);&nbsp;//&nbsp;[1,&nbsp;2,&nbsp;3,&nbsp;4]<br/>
-{/c}<br/>
-<b>Sample&nbsp;use&nbsp;case&nbsp;for&nbsp;list&nbsp;comprehension:</b>{c}Widget&nbsp;build(BuildContext&nbsp;context)&nbsp;{<br/>
-<i>&nbsp;&nbsp;return&nbsp;Row(</i><br/><i>&nbsp;&nbsp;&nbsp;&nbsp;children:&nbsp;[</i><br/><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;IconButton(icon:&nbsp;Icon(Icons.menu)),</i><br/><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(!isAndroid)&nbsp;...[</i><br/><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Expanded(child:&nbsp;title),</i><br/><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;IconButton(icon:&nbsp;Icon(Icons.search)),</i><br/><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]</i><br/><i>&nbsp;&nbsp;&nbsp;&nbsp;],</i><br/><i>&nbsp;&nbsp;);</i><br/>}{/c}<br/>
+<h1 id="async/await">29. async/await</h1><hr><b>Awaiting&nbsp;multiple&nbsp;async&nbsp;calls:</b><blockquote style="border: 1px solid black; padding: 5px; background-color: #FFFFEE; font-style: italic;">&nbsp;&nbsp;&nbsp;&nbsp;<red>var&nbsp;</red>awaits&nbsp;=&nbsp;[<blue>for&nbsp;</blue>(CoinData&nbsp;c&nbsp;in&nbsp;coins)&nbsp;c.getCoinData(selectedCurrency)];<br/>
+<i>&nbsp;&nbsp;&nbsp;&nbsp;<red>await&nbsp;</red><red>Future</red>.wait(awaits);</blockquote></i><br/><b>Function&nbsp;example&nbsp;</b><br/>&nbsp;<i>&nbsp;<blockquote style="border: 1px solid black; padding: 5px; background-color: #FFFFEE; font-style: italic;"><red>Future</red>&lt;<blue>String</blue>&gt;&nbsp;doAsync()&nbsp;<red>async&nbsp;</red><maroon>{</maroon></i><br/><i>&nbsp;&nbsp;&nbsp;<blue>String</blue>&nbsp;result;</i><br/><i>&nbsp;&nbsp;&nbsp;<red>await&nbsp;</red><red>Future</red>.delayed(Duration(seconds:&nbsp;3),&nbsp;()&nbsp;<maroon>{</maroon></i><br/><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;result&nbsp;=&nbsp;<orange>"test"</orange>;</i><br/><i>&nbsp;&nbsp;&nbsp;<maroon>}</maroon>);</i><br/><i>&nbsp;&nbsp;&nbsp;<red>return&nbsp;</red>result;</i><br/><i>&nbsp;<maroon>}</maroon></blockquote></i><br/><b>Function&nbsp;signature&nbsp;</b><br/>&nbsp;<i>&nbsp;Future&lt;void&gt;&nbsp;doAsync(int&nbsp;stuff)&nbsp;async&nbsp;{&nbsp;}</i><br/><b>Awaiting&nbsp;async&nbsp;function&nbsp;call&nbsp;</b><br/>&nbsp;<i>&nbsp;await&nbsp;doAsync();</i><br/><b>Asynchronous&nbsp;sleep&nbsp;function&nbsp;</b><br/>&nbsp;<i>&nbsp;await&nbsp;Future.delayed(duration,&nbsp;callback);</i><br/><b>Callback&nbsp;function&nbsp;signature&nbsp;(lambda/anonymous&nbsp;function?)&nbsp;</b><br/>&nbsp;<i>&nbsp;()&nbsp;async&nbsp;{&nbsp;await&nbsp;doThing();&nbsp;}</i><br/><hr><br/>
+<h1 id="Syntax">30. Syntax</h1><hr><b>List&nbsp;comprehension:</b><blockquote style="border: 1px solid black; padding: 5px; background-color: #FFFFEE; font-style: italic;"><red>var&nbsp;</red>list1&nbsp;=&nbsp;[<blue>for&nbsp;</blue>(<blue>int&nbsp;</blue>x&nbsp;=&nbsp;0;&nbsp;x&nbsp;&lt;&nbsp;5;&nbsp;x++)&nbsp;<blue>if&nbsp;</blue>(x&nbsp;&lt;&nbsp;3)&nbsp;x&nbsp;*&nbsp;1.5&nbsp;<blue>else&nbsp;</blue>x&nbsp;*&nbsp;150];<br/>
+<blue>print</blue>(list1);&nbsp;//&nbsp;[0,&nbsp;1.5,&nbsp;3,&nbsp;450,&nbsp;600]<br/>
+<red>var&nbsp;</red>list2&nbsp;=&nbsp;[<blue>for&nbsp;</blue>(<blue>int&nbsp;</blue>x&nbsp;=&nbsp;0;&nbsp;x&nbsp;&lt;&nbsp;5;&nbsp;x++)&nbsp;<blue>if&nbsp;</blue>(x&nbsp;&gt;&nbsp;0&nbsp;&&&nbsp;x&nbsp;&lt;&nbsp;2)&nbsp;x];<br/>
+<blue>print</blue>(list2);&nbsp;//&nbsp;[1]<br/>
+[<blue>for&nbsp;</blue>(<blue>int&nbsp;</blue>x&nbsp;=&nbsp;0;&nbsp;x&nbsp;&lt;&nbsp;10;&nbsp;x++)&nbsp;<blue>print</blue>(x)];<br/>
+</blockquote><br/>
+<b>Map&nbsp;comprehension:</b><blockquote style="border: 1px solid black; padding: 5px; background-color: #FFFFEE; font-style: italic;"><blue>class&nbsp;</blue>Fruit&nbsp;<maroon>{</maroon><br/>
+<i>&nbsp;&nbsp;Fruit(<red>this</red>.name,&nbsp;<red>this</red>.id);</i><br/><i>&nbsp;&nbsp;<blue>String</blue>&nbsp;name;</i><br/><i>&nbsp;&nbsp;<blue>int&nbsp;</blue>id;</i><br/><maroon>}</maroon><br/>
+<red>var&nbsp;</red>list&nbsp;=&nbsp;[Fruit(<orange>'Banana'</orange>,&nbsp;5),&nbsp;Fruit(<orange>'Apple'</orange>,&nbsp;6),&nbsp;Fruit(<orange>'Rat'</orange>,&nbsp;0)];<br/>
+<red>var&nbsp;</red>map&nbsp;=&nbsp;<maroon>{</maroon><blue>for&nbsp;</blue>(Fruit&nbsp;f&nbsp;in&nbsp;list)&nbsp;<orange>'${f.id}'</orange>:&nbsp;f.name<maroon>}</maroon>;&nbsp;//&nbsp;<blue>if&nbsp;</blue>and/or&nbsp;<blue>else&nbsp;</blue>can&nbsp;be&nbsp;used&nbsp;here&nbsp;as&nbsp;well<br/>
+<blue>print</blue>(map);&nbsp;//&nbsp;<maroon>{</maroon>5:&nbsp;Banana,&nbsp;6:&nbsp;Apple,&nbsp;0:&nbsp;Rat<maroon>}</maroon><br/>
+</blockquote><br/>
+<b>Spreads:</b><blockquote style="border: 1px solid black; padding: 5px; background-color: #FFFFEE; font-style: italic;"><red>var&nbsp;</red>other<red>List</red>&nbsp;=&nbsp;[2,3,4];<br/>
+<red>var&nbsp;</red>list&nbsp;=&nbsp;[<blue>for&nbsp;</blue>(<blue>int&nbsp;</blue>x&nbsp;=&nbsp;0;&nbsp;x&nbsp;&lt;&nbsp;5;&nbsp;x++)&nbsp;<blue>if&nbsp;</blue>(x&nbsp;&gt;&nbsp;0&nbsp;&&&nbsp;x&nbsp;&lt;&nbsp;2)&nbsp;x,<br/>
+<i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<red>...</red>other<red>List</red>];</i><br/><blue>print</blue>(list);&nbsp;//&nbsp;[1,&nbsp;2,&nbsp;3,&nbsp;4]<br/>
+</blockquote><br/>
+<b>Sample&nbsp;use&nbsp;case&nbsp;for&nbsp;list&nbsp;comprehension:</b><blockquote style="border: 1px solid black; padding: 5px; background-color: #FFFFEE; font-style: italic;">Widget&nbsp;build(BuildContext&nbsp;context)&nbsp;<maroon>{</maroon><br/>
+<i>&nbsp;&nbsp;<red>return&nbsp;</red>Row(</i><br/><i>&nbsp;&nbsp;&nbsp;&nbsp;children:&nbsp;[</i><br/><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;IconButton(icon:&nbsp;Icon(Icons.menu)),</i><br/><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<blue>if&nbsp;</blue>(!isAndroid)&nbsp;<red>...</red>[</i><br/><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Expanded(child:&nbsp;title),</i><br/><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;IconButton(icon:&nbsp;Icon(Icons.search)),</i><br/><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]</i><br/><i>&nbsp;&nbsp;&nbsp;&nbsp;],</i><br/><i>&nbsp;&nbsp;);</i><br/><maroon>}</maroon></blockquote><br/>
 <b>async/await&nbsp;</b><br/>&nbsp;<i>&nbsp;See&nbsp;more&nbsp;in&nbsp;the&nbsp;async/await&nbsp;section</i><br/><b>"*variable*&nbsp;is&nbsp;*class*"&nbsp;</b><br/>&nbsp;<i>&nbsp;returns&nbsp;true&nbsp;if&nbsp;*variable*&nbsp;is&nbsp;of&nbsp;(and/or&nbsp;inherits?)&nbsp;type&nbsp;*class*</i><br/><b>"(*variable*&nbsp;as&nbsp;*class*).*property/method"&nbsp;</b><br/>&nbsp;<i>&nbsp;cast&nbsp;and&nbsp;perform&nbsp;method&nbsp;call&nbsp;or&nbsp;property&nbsp;get/set</i><br/><b>null&nbsp;coalescing&nbsp;operator&nbsp;</b><br/>&nbsp;<i>&nbsp;String&nbsp;f&nbsp;=&nbsp;null;&nbsp;print(f&nbsp;??&nbsp;"f&nbsp;=&nbsp;null");&nbsp;//&nbsp;if&nbsp;f&nbsp;is&nbsp;not&nbsp;null,&nbsp;prints&nbsp;f,&nbsp;if&nbsp;f&nbsp;is&nbsp;null,&nbsp;prints&nbsp;"f&nbsp;=&nbsp;null"&nbsp;</i><br/><b>null&nbsp;conditional&nbsp;operator&nbsp;</b><br/>&nbsp;<i>&nbsp;obj?.method()</i><br/><b>String&nbsp;interpolation:</b><br/>
 variable&nbsp;access:<br/>
 <blockquote style="border: 1px solid black; padding: 5px; background-color: #FFFFEE; font-style: italic;"><orange>'Text&nbsp;in&nbsp;variable:&nbsp;$variableText,&nbsp;$otherVariableText'</orange>;</blockquote><br/>
 member&nbsp;access:<br/>
 <blockquote style="border: 1px solid black; padding: 5px; background-color: #FFFFEE; font-style: italic;"><orange>'Text&nbsp;in&nbsp;vari:&nbsp;${inst.memberText},&nbsp;${otherInst.otherMemberText}'</orange>;</blockquote><br/>
-<b>try/catch/finally:</b>{c}try&nbsp;{<br/>
+<b>try/catch/finally:</b><blockquote style="border: 1px solid black; padding: 5px; background-color: #FFFFEE; font-style: italic;"><blue>try&nbsp;</blue><maroon>{</maroon><br/>
 	//&nbsp;do<br/>
-	double&nbsp;p&nbsp;=&nbsp;double.parse('ab');<br/>
-}&nbsp;catch&nbsp;(e)&nbsp;{<br/>
+	<blue>double&nbsp;</blue>p&nbsp;=&nbsp;double.parse(<orange>'ab'</orange>);<br/>
+<maroon>}</maroon>&nbsp;<blue>catch&nbsp;</blue>(e)&nbsp;<maroon>{</maroon><br/>
 	//&nbsp;catch<br/>
-	print(e);<br/>
-}&nbsp;finally&nbsp;{<br/>
+	<blue>print</blue>(e);<br/>
+<maroon>}</maroon>&nbsp;<blue>finally&nbsp;</blue><maroon>{</maroon><br/>
 	//&nbsp;cleanup<br/>
-}{/c}<br/>
-<b>Exceptions:</b>{c}&nbsp;&nbsp;throw&nbsp;'Error!&nbsp;Something&nbsp;went&nbsp;wrong.';&nbsp;//&nbsp;valid<br/>
-<i>&nbsp;&nbsp;throw&nbsp;FormatException('Invalid&nbsp;format.');&nbsp;//&nbsp;valid&nbsp;and&nbsp;preferred,&nbsp;more&nbsp;helpful{/c}</i><br/><b>Collection&nbsp;literals:</b>{c}	var&nbsp;names&nbsp;=&nbsp;&lt;String&gt;['Seth',&nbsp;'Erik'];&nbsp;//&nbsp;List&lt;String&gt;<br/>
-	var&nbsp;uniqueNames&nbsp;=&nbsp;&lt;String&gt;{'Seth',&nbsp;'Erik'};&nbsp;//&nbsp;Set&lt;String&gt;<br/>
-	var&nbsp;pages&nbsp;=&nbsp;&lt;String,&nbsp;String&gt;{<br/>
-	&nbsp;&nbsp;'index.html':&nbsp;'Homepage',<br/>
-	&nbsp;&nbsp;'robots.txt':&nbsp;'Hints&nbsp;for&nbsp;web&nbsp;robots'<br/>
-	};&nbsp;//&nbsp;Map&lt;String,&nbsp;String&gt;<br/>
-{/c}<br/>
-<b>For&nbsp;loops:</b>{c}for(int&nbsp;i&nbsp;=&nbsp;0;&nbsp;i&nbsp;&lt;&nbsp;7;&nbsp;i++)&nbsp;{<br/>
-	print(i);<br/>
-}<br/>
+<maroon>}</maroon></blockquote><br/>
+<b>Exceptions:</b><blockquote style="border: 1px solid black; padding: 5px; background-color: #FFFFEE; font-style: italic;">&nbsp;&nbsp;<blue>throw&nbsp;</blue><orange>'Error!&nbsp;Something&nbsp;went&nbsp;wrong.'</orange>;&nbsp;//&nbsp;valid<br/>
+<i>&nbsp;&nbsp;<blue>throw&nbsp;</blue>FormatException(<orange>'Invalid&nbsp;format.'</orange>);&nbsp;//&nbsp;valid&nbsp;and&nbsp;preferred,&nbsp;more&nbsp;helpful</blockquote></i><br/><b>Collection&nbsp;literals:</b><blockquote style="border: 1px solid black; padding: 5px; background-color: #FFFFEE; font-style: italic;">	<red>var&nbsp;</red>names&nbsp;=&nbsp;&lt;<blue>String</blue>&gt;[<orange>'Seth'</orange>,&nbsp;<orange>'Erik'</orange>];&nbsp;//&nbsp;<red>List</red>&lt;<blue>String</blue>&gt;<br/>
+	<red>var&nbsp;</red>uniqueNames&nbsp;=&nbsp;&lt;<blue>String</blue>&gt;<maroon>{</maroon><orange>'Seth'</orange>,&nbsp;<orange>'Erik'</orange><maroon>}</maroon>;&nbsp;//&nbsp;<red>Set</red>&lt;<blue>String</blue>&gt;<br/>
+	<red>var&nbsp;</red>pages&nbsp;=&nbsp;&lt;<blue>String</blue>,&nbsp;<blue>String</blue>&gt;<maroon>{</maroon><br/>
+	&nbsp;&nbsp;<orange>'index.html'</orange>:&nbsp;<orange>'Homepage'</orange>,<br/>
+	&nbsp;&nbsp;<orange>'robots.txt'</orange>:&nbsp;<orange>'Hints&nbsp;for&nbsp;web&nbsp;robots'</orange><br/>
+	<maroon>}</maroon>;&nbsp;//&nbsp;<red>Map</red>&lt;<blue>String</blue>,&nbsp;<blue>String</blue>&gt;<br/>
+</blockquote><br/>
+<b>For&nbsp;loops:</b><blockquote style="border: 1px solid black; padding: 5px; background-color: #FFFFEE; font-style: italic;">for(<blue>int&nbsp;</blue>i&nbsp;=&nbsp;0;&nbsp;i&nbsp;&lt;&nbsp;7;&nbsp;i++)&nbsp;<maroon>{</maroon><br/>
+	<blue>print</blue>(i);<br/>
+<maroon>}</maroon><br/>
 <br/>
-for(String&nbsp;fruit&nbsp;in&nbsp;fruits)&nbsp;{<br/>
-	print(fruit);<br/>
-}{/c}<br/>
+for(<blue>String</blue>&nbsp;fruit&nbsp;in&nbsp;fruits)&nbsp;<maroon>{</maroon><br/>
+	<blue>print</blue>(fruit);<br/>
+<maroon>}</maroon></blockquote><br/>
 <br/>
 <b>Read&nbsp;more&nbsp;about&nbsp;constructors&nbsp;</b><br/>&nbsp;<i>&nbsp;<a href="https://dart.dev/guides/language/language-tour#constructors">https://dart.dev/guides/language/language-tour#constructors</a></i><br/><hr><br/>
 <h1 id="Enums">31. Enums</h1><hr>Enums&nbsp;are&nbsp;defined&nbsp;like&nbsp;this:<br/>
@@ -248,43 +248,43 @@ String&nbsp;text;&nbsp;//&nbsp;public&nbsp;field<br/>
 To&nbsp;have&nbsp;a&nbsp;constructor&nbsp;which&nbsp;takes&nbsp;an&nbsp;argument&nbsp;that&nbsp;is&nbsp;named&nbsp;the&nbsp;same&nbsp;as&nbsp;a&nbsp;field,&nbsp;you&nbsp;can&nbsp;assign&nbsp;the&nbsp;value&nbsp;to&nbsp;it&nbsp;by&nbsp;accessing&nbsp;it&nbsp;through<br/>
 	"this",&nbsp;e.g.&nbsp;"this.text&nbsp;=&nbsp;text;"<br/>
 <br/>
-<b>Different&nbsp;types&nbsp;of&nbsp;constructors:</b>{c}class&nbsp;Question&nbsp;{<br/>
-	String&nbsp;text;<br/>
-	bool&nbsp;answer;<br/>
+<b>Different&nbsp;types&nbsp;of&nbsp;constructors:</b><blockquote style="border: 1px solid black; padding: 5px; background-color: #FFFFEE; font-style: italic;"><blue>class&nbsp;</blue>Question&nbsp;<maroon>{</maroon><br/>
+	<blue>String</blue>&nbsp;text;<br/>
+	<blue>bool&nbsp;</blue>answer;<br/>
 	/*&nbsp;constructor&nbsp;type&nbsp;1:&nbsp;*/<br/>
-	Question({String&nbsp;q,&nbsp;bool&nbsp;a})&nbsp;{&nbsp;<br/>
+	Question(<maroon>{</maroon><blue>String</blue>&nbsp;q,&nbsp;<blue>bool&nbsp;</blue>a<maroon>}</maroon>)&nbsp;<maroon>{</maroon>&nbsp;<br/>
 		text&nbsp;=&nbsp;q;<br/>
 		answer&nbsp;=&nbsp;a;<br/>
-	}&nbsp;//&nbsp;Question(q:&nbsp;'Is&nbsp;true?',&nbsp;a:&nbsp;true);<br/>
+	<maroon>}</maroon>&nbsp;//&nbsp;Question(q:&nbsp;<orange>'Is&nbsp;true?'</orange>,&nbsp;a:<blue>&nbsp;true</blue>);<br/>
 <br/>
 	/*&nbsp;constructor&nbsp;type&nbsp;2,&nbsp;equivalent&nbsp;to&nbsp;1:&nbsp;*/<br/>
-	Question({this.text,&nbsp;this.answer});&nbsp;//&nbsp;Question(q:&nbsp;'Is&nbsp;true?',&nbsp;a:&nbsp;true);<br/>
+	Question(<maroon>{</maroon><red>this</red>.text,&nbsp;<red>this</red>.answer<maroon>}</maroon>);&nbsp;//&nbsp;Question(q:&nbsp;<orange>'Is&nbsp;true?'</orange>,&nbsp;a:<blue>&nbsp;true</blue>);<br/>
 <br/>
 	/*&nbsp;constructor&nbsp;type&nbsp;3:&nbsp;*/<br/>
-	Question(String&nbsp;q,&nbsp;bool&nbsp;a)&nbsp;{<br/>
+	Question(<blue>String</blue>&nbsp;q,&nbsp;<blue>bool&nbsp;</blue>a)&nbsp;<maroon>{</maroon><br/>
 		text&nbsp;=&nbsp;q;<br/>
 		answer&nbsp;=&nbsp;a;<br/>
-	}&nbsp;//&nbsp;Question('Is&nbsp;true?',&nbsp;true);<br/>
+	<maroon>}</maroon>&nbsp;//&nbsp;Question(<orange>'Is&nbsp;true?'</orange>,<blue>&nbsp;true</blue>);<br/>
 <br/>
 	/*&nbsp;constructor&nbsp;type&nbsp;4,&nbsp;equivalent&nbsp;to&nbsp;3:&nbsp;*/<br/>
-	Question(this.text,&nbsp;this.answer);&nbsp;//&nbsp;Question('Is&nbsp;true?',&nbsp;true);<br/>
+	Question(<red>this</red>.text,&nbsp;<red>this</red>.answer);&nbsp;//&nbsp;Question(<orange>'Is&nbsp;true?'</orange>,<blue>&nbsp;true</blue>);<br/>
 <br/>
 	/*&nbsp;constructor&nbsp;type&nbsp;5&nbsp;(named&nbsp;constructor):&nbsp;*/<br/>
-	Question.meaningOfLife()&nbsp;{<br/>
-		text&nbsp;=&nbsp;"Is&nbsp;there&nbsp;a&nbsp;meaning&nbsp;to&nbsp;life?";<br/>
-		answer&nbsp;=&nbsp;true;<br/>
-	}&nbsp;//&nbsp;Question.meaningOfLife();<br/>
-}{/c}<br/>
-<b>Named&nbsp;constructor:</b>{c}class&nbsp;Point&nbsp;{<br/>
-	num&nbsp;x,&nbsp;y;<br/>
-	Point(this.x,this.y);<br/>
+	Question.meaningOfLife()&nbsp;<maroon>{</maroon><br/>
+		text&nbsp;=&nbsp;<orange>"Is&nbsp;there&nbsp;a&nbsp;meaning&nbsp;to&nbsp;life?"</orange>;<br/>
+		answer&nbsp;=<blue>&nbsp;true</blue>;<br/>
+	<maroon>}</maroon>&nbsp;//&nbsp;Question.meaningOfLife();<br/>
+<maroon>}</maroon></blockquote><br/>
+<b>Named&nbsp;constructor:</b><blockquote style="border: 1px solid black; padding: 5px; background-color: #FFFFEE; font-style: italic;"><blue>class&nbsp;</blue>Po<blue>int&nbsp;</blue><maroon>{</maroon><br/>
+	<blue>num&nbsp;</blue>x,&nbsp;y;<br/>
+	Point(<red>this</red>.x,<red>this</red>.y);<br/>
 <br/>
-	Point.zero()&nbsp;{&nbsp;//&nbsp;named&nbsp;constructor&nbsp;-&nbsp;called&nbsp;through&nbsp;Point.zero();<br/>
+	Point.zero()&nbsp;<maroon>{</maroon>&nbsp;//&nbsp;named&nbsp;constructor&nbsp;-&nbsp;called&nbsp;through&nbsp;Point.zero();<br/>
 		x&nbsp;=&nbsp;0;<br/>
 		y&nbsp;=&nbsp;0;<br/>
-	}<br/>
-}<br/>
-{/c}<br/>
+	<maroon>}</maroon><br/>
+<maroon>}</maroon><br/>
+</blockquote><br/>
 <hr><br/>
 <h1 id="Functions">34. Functions</h1><hr><b>print()&nbsp;</b><br/>&nbsp;<i>&nbsp;prints&nbsp;to&nbsp;the&nbsp;console&nbsp;of&nbsp;android&nbsp;studio&nbsp;(Run/Debug)</i><br/><b>assert()&nbsp;</b><br/>&nbsp;<i>&nbsp;asserts&nbsp;a&nbsp;statement&nbsp;is&nbsp;true</i><br/><hr><br/>
 <h1 id="Function signatures">35. Function signatures</h1><hr><b>void&nbsp;doSomething(int&nbsp;what,&nbsp;String&nbsp;ever)&nbsp;{}&nbsp;</b><br/>&nbsp;<i>&nbsp;called&nbsp;by&nbsp;doSomething(1,&nbsp;'test');</i><br/><b>void&nbsp;doSomething({int&nbsp;what,&nbsp;String&nbsp;ever)&nbsp;{}&nbsp;</b><br/>&nbsp;<i>&nbsp;called&nbsp;by&nbsp;doSomething(what:&nbsp;1,&nbsp;ever:&nbsp;'test');</i><br/><b>void&nbsp;doSomething(int&nbsp;what,&nbsp;{String&nbsp;ever})&nbsp;{}&nbsp;</b><br/>&nbsp;<i>&nbsp;called&nbsp;by&nbsp;doSomething(1,&nbsp;ever:&nbsp;'test');</i><br/><b>void&nbsp;doSomething(int&nbsp;what,&nbsp;String&nbsp;ever&nbsp;=&nbsp;'test')&nbsp;{}&nbsp;</b><br/>&nbsp;<i>&nbsp;called&nbsp;by&nbsp;doSomething(1);</i><br/><b>void&nbsp;doSomething(int&nbsp;what,&nbsp;String&nbsp;ever)&nbsp;async&nbsp;{}&nbsp;</b><br/>&nbsp;<i>&nbsp;async&nbsp;method,&nbsp;use&nbsp;await&nbsp;to&nbsp;await&nbsp;method&nbsp;calls&nbsp;inside&nbsp;function</i><br/><hr><br/>
@@ -296,13 +296,13 @@ or&nbsp;to&nbsp;make&nbsp;it&nbsp;possible&nbsp;to&nbsp;impose&nbsp;a&nbsp;meani
 <br/>
 <b>Read&nbsp;more&nbsp;about&nbsp;const&nbsp;constructors&nbsp;</b><br/>&nbsp;<i>&nbsp;<a href="https://stackoverflow.com/questions/21744677/how-does-the-const-constructor-actually-work">https://stackoverflow.com/questions/21744677/how-does-the-const-constructor-actually-work</a></i><br/><br/>
 e.g.<br/>
-{c}var&nbsp;foo1&nbsp;=&nbsp;const&nbsp;Foo(1,&nbsp;1);&nbsp;//&nbsp;#Foo#int#1#int#1<br/>
-var&nbsp;foo2&nbsp;=&nbsp;const&nbsp;Foo(1,&nbsp;1);&nbsp;//&nbsp;#Foo#int#1#int#1<br/>
-var&nbsp;foo3&nbsp;=&nbsp;const&nbsp;Foo(1,&nbsp;2);&nbsp;//&nbsp;$Foo$int$1$int$2<br/>
-var&nbsp;foo4&nbsp;=&nbsp;const&nbsp;Foo(1,&nbsp;3);&nbsp;//&nbsp;$Foo$int$1$int$3<br/>
+<blockquote style="border: 1px solid black; padding: 5px; background-color: #FFFFEE; font-style: italic;"><red>var&nbsp;</red>foo1&nbsp;=&nbsp;<red>const&nbsp;</red>Foo(1,&nbsp;1);&nbsp;//&nbsp;#Foo#int#1#int#1<br/>
+<red>var&nbsp;</red>foo2&nbsp;=&nbsp;<red>const&nbsp;</red>Foo(1,&nbsp;1);&nbsp;//&nbsp;#Foo#int#1#int#1<br/>
+<red>var&nbsp;</red>foo3&nbsp;=&nbsp;<red>const&nbsp;</red>Foo(1,&nbsp;2);&nbsp;//&nbsp;$Foo$int$1$int$2<br/>
+<red>var&nbsp;</red>foo4&nbsp;=&nbsp;<red>const&nbsp;</red>Foo(1,&nbsp;3);&nbsp;//&nbsp;$Foo$int$1$int$3<br/>
 <br/>
-var&nbsp;baz1&nbsp;=&nbsp;const&nbsp;Baz(const&nbsp;Foo(1,&nbsp;1),&nbsp;"hello");&nbsp;//&nbsp;$Baz$Foo$int$1$int$1$String$hello<br/>
-var&nbsp;baz2&nbsp;=&nbsp;const&nbsp;Baz(const&nbsp;Foo(1,&nbsp;1),&nbsp;"hello");&nbsp;//&nbsp;$Baz$Foo$int$1$int$1$String$hello<br/>
-{/c}<br/>
+<red>var&nbsp;</red>baz1&nbsp;=&nbsp;<red>const&nbsp;</red>Baz(<red>const&nbsp;</red>Foo(1,&nbsp;1),&nbsp;<orange>"hello"</orange>);&nbsp;//&nbsp;$Baz$Foo$int$1$int$1$<blue>String</blue>$hello<br/>
+<red>var&nbsp;</red>baz2&nbsp;=&nbsp;<red>const&nbsp;</red>Baz(<red>const&nbsp;</red>Foo(1,&nbsp;1),&nbsp;<orange>"hello"</orange>);&nbsp;//&nbsp;$Baz$Foo$int$1$int$1$<blue>String</blue>$hello<br/>
+</blockquote><br/>
 <br/>
 </div></html>
