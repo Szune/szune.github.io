@@ -1,0 +1,308 @@
+<html><head><style type="text/css">.menu { position: fixed; width:250px; height: 95%; background: #eee; margin-right: 10px; padding-left: 5px; padding-right: 5px; overflow-y: scroll; border: 1px solid black; } .content { background: #ddd; margin-left: 270px; height: 95%; padding: 10px; border: 1px solid black; overflow-x: scroll; word-wrap: break-word; }blue {color: blue;}red {color: red;}maroon {color: maroon;}orange {color: orange !important;}</style></head><div class="menu"><b>Sections:</b><br/><a href="f_notes.html#Dart language tips">1. Dart language tips</a><br/><a href="f_notes.html#Widget types">2. Widget types</a><br/><a href="f_notes.html#Multi-Screen Apps Using Routes and Navigation">3. Multi-Screen Apps Using Routes and Navigation</a><br/><a href="f_notes.html#Android and iOS widget differences">4. Android and iOS widget differences</a><br/><a href="f_notes.html#Android studio">5. Android studio</a><br/><a href="f_notes.html#Adding assets">6. Adding assets</a><br/><a href="f_notes.html#Change text style">7. Change text style</a><br/><a href="f_notes.html#Detecting taps, clicks, gestures">8. Detecting taps, clicks, gestures</a><br/><a href="f_notes.html#Colors">9. Colors</a><br/><a href="f_notes.html#Animations">10. Animations</a><br/><a href="f_notes.html#Borders">11. Borders</a><br/><a href="f_notes.html#Themes">12. Themes</a><br/><a href="f_notes.html#Naming conventions">13. Naming conventions</a><br/><a href="f_notes.html#Structuring projects">14. Structuring projects</a><br/><a href="f_notes.html#App Background image">15. App Background image</a><br/><a href="f_notes.html#ColorFilter on DecorationImage">16. ColorFilter on DecorationImage</a><br/><a href="f_notes.html#Margins">17. Margins</a><br/><a href="f_notes.html#Sizing">18. Sizing</a><br/><a href="f_notes.html#Alignment">19. Alignment</a><br/><a href="f_notes.html#Hot reload/restart">20. Hot reload/restart</a><br/><a href="f_notes.html#Widget base classes">21. Widget base classes</a><br/><a href="f_notes.html#Auto-completes">22. Auto-completes</a><br/><a href="f_notes.html#Packages">23. Packages</a><br/><a href="f_notes.html#Data types">24. Data types</a><br/><a href="f_notes.html#Function delegates">25. Function delegates</a><br/><a href="f_notes.html#constness/finalness">26. constness/finalness</a><br/><a href="f_notes.html#DateTime">27. DateTime</a><br/><a href="f_notes.html#Stateful widgets">28. Stateful widgets</a><br/><a href="f_notes.html#async/await">29. async/await</a><br/><a href="f_notes.html#Syntax">30. Syntax</a><br/><a href="f_notes.html#Enums">31. Enums</a><br/><a href="f_notes.html#Inheritance/composition">32. Inheritance/composition</a><br/><a href="f_notes.html#Classes">33. Classes</a><br/><a href="f_notes.html#Functions">34. Functions</a><br/><a href="f_notes.html#Function signatures">35. Function signatures</a><br/><a href="f_notes.html#Examples">36. Examples</a><br/></div><div class="content"><h1 id="Dart language tips">1. Dart language tips</h1><hr><a href="https://medium.com/dartlang/making-dart-a-better-language-for-ui-f1ccaf9f546c">https://medium.com/dartlang/making-dart-a-better-language-for-ui-f1ccaf9f546c</a><br/>
+<hr><br/>
+<h1 id="Widget types">2. Widget types</h1><hr><b>MaterialApp&nbsp;</b><br/>&nbsp;<i>&nbsp;Base&nbsp;widget&nbsp;for&nbsp;Material&nbsp;Design&nbsp;apps,&nbsp;use&nbsp;home&nbsp;property&nbsp;for&nbsp;content,&nbsp;theme&nbsp;property&nbsp;for&nbsp;setting&nbsp;dark&nbsp;or&nbsp;light&nbsp;theme</i><br/><b>SafeArea&nbsp;</b><br/>&nbsp;<i>&nbsp;container&nbsp;whose&nbsp;children&nbsp;aren't&nbsp;hidden&nbsp;by&nbsp;any&nbsp;bezel&nbsp;or&nbsp;border&nbsp;(as&nbsp;can&nbsp;be&nbsp;seen&nbsp;if&nbsp;your&nbsp;main&nbsp;container</i><br/><i>&nbsp;	is a Container and the first child is a Text, it'll show up in right at the top and likely be at least partly hidden)</i><br/><b>LinearProgressIndicator&nbsp;</b><br/>&nbsp;<i>&nbsp;progress&nbsp;bar</i><br/><b>Row&nbsp;</b><br/>&nbsp;<i>&nbsp;Stacking&nbsp;children&nbsp;horizontally</i><br/><b>Column&nbsp;</b><br/>&nbsp;<i>&nbsp;Stacking&nbsp;children&nbsp;vertically&nbsp;(verticalDirection&nbsp;changes&nbsp;whether&nbsp;stacking&nbsp;down&nbsp;from&nbsp;top&nbsp;of&nbsp;parent&nbsp;or&nbsp;up&nbsp;from&nbsp;bottom&nbsp;of&nbsp;parent)</i><br/><i>&nbsp;		** Column and Row all have the same properties, so if you want to change from a Column to a Row,</i><br/><i>&nbsp;		** all you need to do is to change the Widget type from Column to Row, leaving everything else unchanged</i><br/><b>Stack&nbsp;</b><br/>&nbsp;<i>&nbsp;Stacking&nbsp;items&nbsp;on&nbsp;top&nbsp;of&nbsp;each&nbsp;other</i><br/><b>Padding&nbsp;</b><br/>&nbsp;<i>&nbsp;Padding</i><br/><b>Center&nbsp;</b><br/>&nbsp;<i>&nbsp;Center</i><br/><b>Image&nbsp;</b><br/>&nbsp;<i>&nbsp;Image</i><br/><i>&nbsp;Image(</i><br/><i>&nbsp;&nbsp;&nbsp;&nbsp;image:</i><br/><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AssetImage('images/diamond.png'),&nbsp;-&gt;&nbsp;can&nbsp;be&nbsp;written&nbsp;as&nbsp;Image.asset('path')</i><br/><i>&nbsp;Image(</i><br/><i>&nbsp;&nbsp;&nbsp;&nbsp;image:</i><br/><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NetworkImage('https://www.w3schools.com/howto/img_lights.jpg'),&nbsp;-&gt;&nbsp;can&nbsp;be&nbsp;written&nbsp;as&nbsp;Image.network('url')</i><br/><b>Container&nbsp;</b><br/>&nbsp;<i>&nbsp;Container&nbsp;(has&nbsp;properties:&nbsp;margin,&nbsp;padding,&nbsp;width,&nbsp;height,&nbsp;background&nbsp;color&nbsp;etc)</i><br/>		**&nbsp;Containers&nbsp;without&nbsp;a&nbsp;child&nbsp;take&nbsp;up&nbsp;as&nbsp;much&nbsp;space&nbsp;as&nbsp;they&nbsp;can&nbsp;<br/>
+		**&nbsp;Containers&nbsp;that&nbsp;do&nbsp;have&nbsp;a&nbsp;child&nbsp;will&nbsp;be&nbsp;sized&nbsp;after&nbsp;the&nbsp;child&nbsp;(unless&nbsp;padding/width/height&nbsp;is&nbsp;specified)<br/>
+<b>Icon&nbsp;</b><br/>&nbsp;<i>&nbsp;Icon</i><br/><b>CircleAvatar&nbsp;</b><br/>&nbsp;<i>&nbsp;A&nbsp;circle&nbsp;that&nbsp;represents&nbsp;a&nbsp;user,&nbsp;typically&nbsp;an&nbsp;image&nbsp;or&nbsp;the&nbsp;user's&nbsp;initials&nbsp;(with&nbsp;a&nbsp;bg&nbsp;color)</i><br/><b>Card&nbsp;</b><br/>&nbsp;<i>&nbsp;A&nbsp;card&nbsp;is&nbsp;a&nbsp;sheet&nbsp;of&nbsp;Material&nbsp;that&nbsp;represents&nbsp;some&nbsp;related&nbsp;information,&nbsp;an&nbsp;album,&nbsp;contact&nbsp;details&nbsp;etc</i><br/><b>ListTile&nbsp;</b><br/>&nbsp;<i>&nbsp;Useful&nbsp;for&nbsp;showing&nbsp;information&nbsp;inside&nbsp;a&nbsp;Card,&nbsp;can&nbsp;have&nbsp;a&nbsp;leading&nbsp;icon&nbsp;or&nbsp;a&nbsp;trailing&nbsp;icon&nbsp;and&nbsp;a&nbsp;title,</i><br/><i>&nbsp;	ListTile has onTap() function, could be used to show available upgrades and tapping performs the upgrade</i><br/><i>&nbsp;	Sample 3 on the documents shows how to make the leading/trailing icon tappable, so that tapping the entire thing upgrades,</i><br/><i>&nbsp;	tapping the trailing icon shows info about the upgrade? The title Text can be wrapped in a GestureDetector so it can be tapped as well</i><br/><b>ListView&nbsp;</b><br/>&nbsp;<i>&nbsp;A&nbsp;scrollable&nbsp;list&nbsp;of&nbsp;widgets&nbsp;arranged&nbsp;linearly,&nbsp;ListTiles&nbsp;are&nbsp;useful&nbsp;as&nbsp;child&nbsp;widgets&nbsp;of&nbsp;a&nbsp;ListView</i><br/><b>Divider&nbsp;</b><br/>&nbsp;<i>&nbsp;Horizontal&nbsp;rule&nbsp;(hr&nbsp;tag&nbsp;in&nbsp;html),&nbsp;one&nbsp;pixel&nbsp;divider</i><br/><b>Expanded&nbsp;</b><br/>&nbsp;<i>&nbsp;A&nbsp;widget&nbsp;that&nbsp;can&nbsp;only&nbsp;be&nbsp;used&nbsp;as&nbsp;a&nbsp;child&nbsp;of&nbsp;Row/Container/Flex,&nbsp;wrapping&nbsp;an&nbsp;Image&nbsp;inside&nbsp;an&nbsp;Expanded&nbsp;widget&nbsp;inside&nbsp;a&nbsp;Column</i><br/><i>&nbsp;	will make that Image expand to fill the available space on its main axis. If multiple children, available space is divided between</i><br/><i>&nbsp;	them according to the 'flex' factor, kind of reminiscent of XAML's GridColumn Width="2*", where "*" equals flex: 1.0</i><br/><b>FlatButton&nbsp;</b><br/>&nbsp;<i>&nbsp;A&nbsp;flat&nbsp;button</i><br/><b>RaisedButton&nbsp;</b><br/>&nbsp;<i>&nbsp;A&nbsp;raised&nbsp;button</i><br/><b>RawMaterialButton&nbsp;</b><br/>&nbsp;<i>&nbsp;Base&nbsp;class&nbsp;for&nbsp;a&nbsp;FloatingActionButton</i><br/><b>BoxDecoration&nbsp;</b><br/>&nbsp;<i>&nbsp;can&nbsp;be&nbsp;used&nbsp;to&nbsp;set&nbsp;a&nbsp;background&nbsp;image&nbsp;for&nbsp;a&nbsp;Container&nbsp;(use&nbsp;DecorationImage,&nbsp;with&nbsp;DecorationImage's&nbsp;image&nbsp;set&nbsp;to&nbsp;an&nbsp;AssetImage),&nbsp;use&nbsp;fit:&nbsp;BoxFit.cover&nbsp;to&nbsp;make&nbsp;it&nbsp;fill&nbsp;the&nbsp;entire&nbsp;screen</i><br/><b>Visibility&nbsp;</b><br/>&nbsp;<i>&nbsp;A&nbsp;widget&nbsp;used&nbsp;to&nbsp;wrap&nbsp;widgets&nbsp;that&nbsp;need&nbsp;to&nbsp;be&nbsp;hidden&nbsp;or&nbsp;shown&nbsp;depending&nbsp;on&nbsp;dynamic&nbsp;factors</i><br/><b>AnimatedSwitcher&nbsp;</b><br/>&nbsp;<i>&nbsp;A&nbsp;widget&nbsp;which&nbsp;can&nbsp;fade&nbsp;from&nbsp;one&nbsp;child&nbsp;to&nbsp;the&nbsp;next&nbsp;as&nbsp;the&nbsp;subtree&nbsp;changes</i><br/><b>AnimatedCrossFade&nbsp;</b><br/>&nbsp;<i>&nbsp;A&nbsp;widget&nbsp;which&nbsp;can&nbsp;fade&nbsp;between&nbsp;two&nbsp;specific&nbsp;children</i><br/><b>Slider&nbsp;</b><br/>&nbsp;<i>&nbsp;A&nbsp;draggable&nbsp;slider,&nbsp;*requires&nbsp;the&nbsp;onChanged&nbsp;property&nbsp;to&nbsp;call&nbsp;setState()&nbsp;in&nbsp;its&nbsp;callback,&nbsp;try&nbsp;changing&nbsp;activeColor&nbsp;and&nbsp;inactiveColor&nbsp;if&nbsp;it's&nbsp;still&nbsp;not&nbsp;visible*</i><br/><b>TextField&nbsp;</b><br/>&nbsp;<i>&nbsp;A&nbsp;simple&nbsp;text&nbsp;input&nbsp;widget:</i><br/>{c}TextField(onChanged:&nbsp;(value)&nbsp;{&nbsp;print(value);&nbsp;},<br/>
+style:&nbsp;TextStyle(color:&nbsp;Colors.black,),<br/>
+decoration:&nbsp;InputDecoration(filled:&nbsp;true,<br/>
+fillColor:&nbsp;Colors.white,<br/>
+icon:&nbsp;Icon(Icons.location_city,&nbsp;color:&nbsp;Colors.white),<br/>
+hintText:&nbsp;'Enter&nbsp;City&nbsp;Name',<br/>
+hintStyle:&nbsp;TextStyle(color:&nbsp;Colors.grey),<br/>
+border:&nbsp;OutlineInputBorder(<br/>
+borderRadius:&nbsp;BorderRadius.all(<br/>
+Radius.circular(10.0),),<br/>
+borderSide:&nbsp;BorderSide.none<br/>
+),),),{/c}<br/>
+<b>DropdownButton&nbsp;</b><br/>&nbsp;<i>&nbsp;button&nbsp;that&nbsp;opens&nbsp;a&nbsp;dropdown&nbsp;menu&nbsp;and&nbsp;lets&nbsp;the&nbsp;user&nbsp;select&nbsp;an&nbsp;item,</i><br/><i>&nbsp;for implementation, see docs: <a href="https://api.flutter.dev/flutter/material/DropdownButton-class.html">https://api.flutter.dev/flutter/material/DropdownButton-class.html</a></i><br/>{c}const&nbsp;List&lt;String&gt;&nbsp;currencies&nbsp;=&nbsp;['USD',&nbsp;'AUD',&nbsp;'CAD',&nbsp;'SEK'];<br/>
+String&nbsp;selectedCurrency&nbsp;=&nbsp;currencies.first;<br/>
+DropdownButton&lt;String&gt;(<br/>
+<i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value:&nbsp;selectedCurrency,</i><br/><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;items:&nbsp;currencies</i><br/><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.map&lt;DropdownMenuItem&lt;String&gt;&gt;((value)&nbsp;=&gt;</i><br/><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DropdownMenuItem&lt;String&gt;(</i><br/><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value:&nbsp;value,</i><br/><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;child:&nbsp;Text(value),</i><br/><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)).toList(),</i><br/><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;onChanged:&nbsp;(value)&nbsp;{</i><br/><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;setState(()&nbsp;{</i><br/><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;selectedCurrency&nbsp;=&nbsp;value;</i><br/><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});</i><br/><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}),{/c}</i><br/><b>Alternative&nbsp;way:</b>{c}DropdownButton&lt;String&gt;(<br/>
+<i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value:&nbsp;selectedCurrency,</i><br/><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;items:&nbsp;[</i><br/><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;(String&nbsp;c&nbsp;in&nbsp;currenciesList)</i><br/><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DropdownMenuItem&lt;String&gt;(value:&nbsp;c,&nbsp;child:&nbsp;Text(c))</i><br/><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;],</i><br/><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;onChanged:&nbsp;(value)&nbsp;{</i><br/><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;setState(()&nbsp;{</i><br/><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;selectedCurrency&nbsp;=&nbsp;value;</i><br/><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});</i><br/><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}),{/c}</i><br/><hr><br/>
+<h1 id="Multi-Screen Apps Using Routes and Navigation">3. Multi-Screen Apps Using Routes and Navigation</h1><hr>In&nbsp;flutter,&nbsp;"screens"&nbsp;and&nbsp;"pages"&nbsp;are&nbsp;called&nbsp;"routes".<br/>
+<br/>
+<br/>
+<b>Navigator.push()&nbsp;</b><br/>&nbsp;<i>&nbsp;Navigates&nbsp;to&nbsp;specified&nbsp;page.&nbsp;Requires&nbsp;a&nbsp;context&nbsp;and&nbsp;a&nbsp;MaterialPageRoute(builder:&nbsp;(context)&nbsp;=&gt;&nbsp;SecondRoute())</i><br/><b>Navigator.pop()&nbsp;</b><br/>&nbsp;<i>&nbsp;Pops&nbsp;the&nbsp;current&nbsp;page&nbsp;from&nbsp;navigation&nbsp;and&nbsp;goes&nbsp;back&nbsp;to&nbsp;the&nbsp;previous&nbsp;screen.</i><br/><b>MaterialApp&nbsp;property&nbsp;"routes"&nbsp;</b><br/>&nbsp;<i>&nbsp;Used&nbsp;for&nbsp;named&nbsp;routes,&nbsp;specified&nbsp;with&nbsp;a&nbsp;Map&lt;string,&nbsp;(BuildContext)&nbsp;=&gt;&nbsp;Widget&gt;</i><br/><i>&nbsp;Note&nbsp;that&nbsp;if&nbsp;you&nbsp;have&nbsp;specified&nbsp;the&nbsp;"home"&nbsp;property&nbsp;of&nbsp;MaterialApp,&nbsp;you&nbsp;can't&nbsp;specify&nbsp;a&nbsp;route&nbsp;with&nbsp;path&nbsp;'/'&nbsp;because&nbsp;it&nbsp;would&nbsp;be&nbsp;redundant.</i><br/>Also&nbsp;note&nbsp;that&nbsp;if&nbsp;you&nbsp;have&nbsp;named&nbsp;routes&nbsp;starting&nbsp;with&nbsp;'/',&nbsp;there&nbsp;has&nbsp;to&nbsp;be&nbsp;one&nbsp;(and&nbsp;only&nbsp;one)&nbsp;route&nbsp;with&nbsp;the&nbsp;name&nbsp;'/'.<br/>
+Set&nbsp;"initialRoute"&nbsp;for&nbsp;a&nbsp;different&nbsp;starting&nbsp;screen.<br/>
+<br/>
+When&nbsp;navigating&nbsp;using&nbsp;named&nbsp;routes,&nbsp;consider&nbsp;putting&nbsp;the&nbsp;route&nbsp;String&nbsp;inside&nbsp;its&nbsp;related&nbsp;class&nbsp;as&nbsp;a&nbsp;static&nbsp;const&nbsp;String&nbsp;property,&nbsp;e.g.:<br/>
+{c}class&nbsp;WelcomeScreen&nbsp;extends&nbsp;StatefulWidget&nbsp;{<br/>
+<i>&nbsp;&nbsp;&nbsp;&nbsp;static&nbsp;const&nbsp;String&nbsp;id&nbsp;=&nbsp;'welcome_screen';</i><br/>}{/c}<br/>
+And&nbsp;then&nbsp;accessing&nbsp;it&nbsp;through&nbsp;WelcomeScreen.id,&nbsp;so&nbsp;initialRoute:&nbsp;WelcomeScreen.id,<br/>
+<br/>
+<br/>
+To&nbsp;send&nbsp;context&nbsp;forwards&nbsp;during&nbsp;navigation&nbsp;(e.g.&nbsp;Navigator.push&nbsp;etc),&nbsp;pass&nbsp;it&nbsp;in&nbsp;the&nbsp;constructor&nbsp;of&nbsp;the&nbsp;new&nbsp;page,&nbsp;i.e.&nbsp;SecondRoute(data)<br/>
+<b>Passing&nbsp;arguments&nbsp;to&nbsp;a&nbsp;named&nbsp;route&nbsp;</b><br/>&nbsp;<i>&nbsp;<a href="https://flutter.dev/docs/cookbook/navigation/navigate-with-arguments">https://flutter.dev/docs/cookbook/navigation/navigate-with-arguments</a></i><br/><br/>
+To&nbsp;send&nbsp;context&nbsp;backwards&nbsp;during&nbsp;navigation&nbsp;(e.g.&nbsp;Navigator.pop&nbsp;etc),&nbsp;pass&nbsp;it&nbsp;as&nbsp;the&nbsp;second&nbsp;value,&nbsp;i.e.&nbsp;Navigator.pop(context,&nbsp;cityName)<br/>
+To&nbsp;retrieve&nbsp;the&nbsp;value&nbsp;from&nbsp;a&nbsp;pop(),&nbsp;await&nbsp;a&nbsp;value&nbsp;during&nbsp;the&nbsp;initial&nbsp;Navigator.push()&nbsp;-<br/>
+it&nbsp;returns&nbsp;a&nbsp;Future,&nbsp;which&nbsp;is&nbsp;awaitable,&nbsp;i.e.:<br/>
+<blockquote style="border: 1px solid black; padding: 5px; background-color: #FFFFEE; font-style: italic;"><red>var&nbsp;</red>result&nbsp;=&nbsp;<red>await&nbsp;</red>Navigator.push(*route*);</blockquote><br/>
+<br/>
+<b>Read&nbsp;more&nbsp;about&nbsp;navigation&nbsp;</b><br/>&nbsp;<i>&nbsp;<a href="https://flutter.dev/docs/cookbook/navigation/navigation-basics">https://flutter.dev/docs/cookbook/navigation/navigation-basics</a></i><br/><hr><br/>
+<h1 id="Android and iOS widget differences">4. Android and iOS widget differences</h1><hr>You&nbsp;can&nbsp;check&nbsp;the&nbsp;platform&nbsp;the&nbsp;app&nbsp;is&nbsp;running&nbsp;on&nbsp;by&nbsp;doing:<br/>
+{c}import&nbsp;'dart:io'&nbsp;show&nbsp;Platform;<br/>
+if&nbsp;(Platform.isIOS)&nbsp;{<br/>
+	//&nbsp;do&nbsp;iOS&nbsp;stuff<br/>
+}&nbsp;else&nbsp;if&nbsp;(Platform.isAndroid)&nbsp;{<br/>
+	//&nbsp;do&nbsp;android&nbsp;stuff<br/>
+}{/c}<br/>
+Android&nbsp;|&nbsp;iOS<br/>
+<ul><li>DropdownButton | CupertinoPicker</li></ul><hr><br/>
+<h1 id="Android studio">5. Android studio</h1><hr><b>Alt+Enter&nbsp;</b><br/>&nbsp;<i>&nbsp;Like&nbsp;resharper's&nbsp;code&nbsp;refactoring&nbsp;(can&nbsp;surround&nbsp;current&nbsp;widget&nbsp;with&nbsp;a&nbsp;Center&nbsp;or&nbsp;another&nbsp;widget&nbsp;etc)</i><br/><br/>
+<b>CTRL+Q&nbsp;on&nbsp;a&nbsp;Widget&nbsp;type&nbsp;</b><br/>&nbsp;<i>&nbsp;it&nbsp;will&nbsp;show&nbsp;you&nbsp;the&nbsp;quick&nbsp;docs&nbsp;(showing&nbsp;properties&nbsp;etc)</i><br/><br/>
+<b>Extract&nbsp;a&nbsp;widget&nbsp;</b><br/>&nbsp;<i>&nbsp;Go&nbsp;to&nbsp;Flutter&nbsp;Outline,&nbsp;navigate&nbsp;to&nbsp;the&nbsp;widget,&nbsp;right&nbsp;click&nbsp;and&nbsp;select&nbsp;"Extract&nbsp;Widget..."</i><br/><br/>
+<b>Add&nbsp;an&nbsp;app&nbsp;icon&nbsp;</b><br/>&nbsp;<i>&nbsp;Right&nbsp;click&nbsp;on&nbsp;the&nbsp;folder&nbsp;android/app/src/main/res&nbsp;and&nbsp;go&nbsp;to&nbsp;New&nbsp;-&gt;&nbsp;Image&nbsp;Asset</i><br/><i>&nbsp;to&nbsp;add&nbsp;an&nbsp;icon&nbsp;and&nbsp;resize&nbsp;to&nbsp;fit&nbsp;different&nbsp;types&nbsp;of&nbsp;sizes&nbsp;of&nbsp;icons&nbsp;for&nbsp;the&nbsp;app</i><br/><br/>
+<b>Flutter&nbsp;source&nbsp;</b><br/>&nbsp;<i>&nbsp;Find&nbsp;out&nbsp;how&nbsp;classes&nbsp;work&nbsp;by&nbsp;going&nbsp;to&nbsp;their&nbsp;source&nbsp;files&nbsp;by&nbsp;holding&nbsp;CTRL&nbsp;while&nbsp;clicking&nbsp;on&nbsp;the&nbsp;name&nbsp;in&nbsp;Android&nbsp;Studio</i><br/><br/>
+After&nbsp;adding&nbsp;a&nbsp;new&nbsp;resource&nbsp;(font&nbsp;etc),&nbsp;a&nbsp;complete&nbsp;reload&nbsp;is&nbsp;required&nbsp;(not&nbsp;hot&nbsp;reload)&nbsp;for&nbsp;changes&nbsp;to&nbsp;take&nbsp;effect<br/>
+<hr><br/>
+<h1 id="Adding assets">6. Adding assets</h1><hr>Add&nbsp;to&nbsp;pubspec.yaml<br/>
+	images&nbsp;under&nbsp;"assets:"<br/>
+	fonts&nbsp;under&nbsp;"fonts:"<br/>
+<hr><br/>
+<h1 id="Change text style">7. Change text style</h1><hr>Set&nbsp;the&nbsp;'style'&nbsp;property&nbsp;of&nbsp;the&nbsp;Text&nbsp;widget&nbsp;to&nbsp;a&nbsp;TextStyle,&nbsp;set&nbsp;fontFamily&nbsp;of&nbsp;the&nbsp;TextStyle&nbsp;to&nbsp;a&nbsp;font&nbsp;you&nbsp;added&nbsp;as&nbsp;an&nbsp;asset<br/>
+TextStyle&nbsp;properties:&nbsp;color,&nbsp;fontSize,&nbsp;letterSpacing,&nbsp;fontWeight<br/>
+<hr><br/>
+<h1 id="Detecting taps, clicks, gestures">8. Detecting taps, clicks, gestures</h1><hr>Wrap&nbsp;your&nbsp;individual&nbsp;widget&nbsp;inside&nbsp;a&nbsp;GestureDetector&nbsp;widget<br/>
+<br/>
+<b>Read&nbsp;more&nbsp;about&nbsp;advanced&nbsp;gestures&nbsp;</b><br/>&nbsp;<i>&nbsp;<a href="https://flutter.dev/docs/development/ui/advanced/gestures">https://flutter.dev/docs/development/ui/advanced/gestures</a></i><br/><hr><br/>
+<h1 id="Colors">9. Colors</h1><hr>Colors&nbsp;can&nbsp;be&nbsp;specified&nbsp;these&nbsp;ways:&nbsp;Colors.teal,&nbsp;Colors.teal[200],&nbsp;Colors.teal.shade200<br/>
+Custom&nbsp;colors&nbsp;can&nbsp;be&nbsp;specified&nbsp;by&nbsp;using&nbsp;Color(0xFF112233)&nbsp;which&nbsp;is&nbsp;in&nbsp;ARGB&nbsp;format&nbsp;(FF=A,&nbsp;11=R,&nbsp;22=G,&nbsp;33=B)<br/>
+<br/>
+Gradients:<br/>
+<i>&nbsp;set&nbsp;decoration&nbsp;property&nbsp;of&nbsp;a&nbsp;Container&nbsp;to&nbsp;a&nbsp;BoxDecoration&nbsp;with&nbsp;the&nbsp;gradient&nbsp;property&nbsp;set</i><br/><i>&nbsp;the&nbsp;gradient&nbsp;property&nbsp;should&nbsp;be&nbsp;set&nbsp;to&nbsp;e.g.&nbsp;LinearGradient&nbsp;</i><br/><hr><br/>
+<h1 id="Animations">10. Animations</h1><hr><b>Hero&nbsp;animations&nbsp;</b><br/>&nbsp;<i>&nbsp;a&nbsp;short&nbsp;animation&nbsp;of&nbsp;an&nbsp;icon&nbsp;(or&nbsp;similar)&nbsp;that&nbsp;exists&nbsp;on&nbsp;two&nbsp;sequential&nbsp;pages&nbsp;and&nbsp;moves&nbsp;between&nbsp;them</i><br/><br/>
+To&nbsp;create&nbsp;hero&nbsp;animations,&nbsp;you&nbsp;need&nbsp;2x&nbsp;Hero&nbsp;widgets,&nbsp;1x&nbsp;shared&nbsp;tag&nbsp;property,&nbsp;Navigator-based&nbsp;screen&nbsp;transitions<br/>
+<ol><li> Wrap the initial icon (the icon is likely already in a Container) in a Hero Widget</li><li> Set the tag on the Hero Widget so that the two Hero Widgets can identify each other</li><li> Setup navigation to the next screen</li><li> Wrap the icon on the next screen in a Hero Widget</li><li> Set the tag of the second Hero Widget to the same as the first</li><li> Add the animation and icon to more screens if wanted</li></ol><br/>
+<i>&nbsp;Read more about hero animations: <a href="https://flutter.dev/docs/development/ui/animations/hero-animations">https://flutter.dev/docs/development/ui/animations/hero-animations</a></i><br/><br/>
+<b>Custom&nbsp;animations&nbsp;with&nbsp;the&nbsp;Animation&nbsp;Controller</b><br/>
+To&nbsp;create&nbsp;a&nbsp;custom&nbsp;animation,&nbsp;you&nbsp;need&nbsp;a&nbsp;Ticker,&nbsp;an&nbsp;Animation&nbsp;Controller&nbsp;and&nbsp;an&nbsp;Animation&nbsp;Value<br/>
+<ol><li> Add the mixin SingleTickerProviderStateMixin (or TickerProvider~ for multiple animations) to your State class (by using the keyword 'with')</li><li> Add an AnimationController variable to your State class of your StatefulWidget, without initializing it</li><li> Override initState() and inside the method, initialize the AnimationController (see next step for how)</li><li> Required arguments are duration (takes a Duration object) and vsync (takes a widget that it syncs with, so use the 'this' keyword to use the instance of the State class)</li><li> vsync can also be seen as 'the class that provides the ticker object'</li><li> Call controller.forward() (where controller is an AnimationController instance)</li></ol><hr><br/>
+<h1 id="Borders">11. Borders</h1><hr>To&nbsp;change&nbsp;the&nbsp;borders&nbsp;of&nbsp;a&nbsp;Container,<br/>
+<ol><li> Set its decoration property to a BoxDecoration</li><li> Set the BoxDecoration's borderRadius property to e.g. BorderRadius.circular(10.0)</li></ol>*****&nbsp;If&nbsp;you're&nbsp;getting&nbsp;an&nbsp;error&nbsp;now,&nbsp;you&nbsp;have&nbsp;probably&nbsp;set&nbsp;the&nbsp;color&nbsp;property&nbsp;of&nbsp;the&nbsp;Container,<br/>
+which&nbsp;is&nbsp;just&nbsp;a&nbsp;shorthand&nbsp;for&nbsp;setting&nbsp;a&nbsp;BoxDecoration&nbsp;with&nbsp;a&nbsp;color,<br/>
+all&nbsp;you&nbsp;have&nbsp;to&nbsp;do&nbsp;is&nbsp;move&nbsp;the&nbsp;color&nbsp;property&nbsp;from&nbsp;the&nbsp;Container&nbsp;into&nbsp;the&nbsp;BoxDecoration<br/>
+*****<br/>
+<hr><br/>
+<h1 id="Themes">12. Themes</h1><hr>Themes&nbsp;can&nbsp;be&nbsp;specified&nbsp;with&nbsp;the&nbsp;theme&nbsp;property,&nbsp;using&nbsp;ThemeData(*theme-properties*),&nbsp;the&nbsp;docs&nbsp;are&nbsp;a&nbsp;good&nbsp;resource&nbsp;for&nbsp;more&nbsp;info<br/>
+<br/>
+If&nbsp;you'd&nbsp;like&nbsp;to&nbsp;use&nbsp;the&nbsp;default&nbsp;dark&nbsp;theme&nbsp;and&nbsp;only&nbsp;change&nbsp;a&nbsp;few&nbsp;specific&nbsp;parts&nbsp;of&nbsp;it,&nbsp;you&nbsp;can&nbsp;use:<br/>
+ThemeData.dark().copyWith(*theme-properties*)<br/>
+<br/>
+<i>&nbsp;To&nbsp;set&nbsp;a&nbsp;custom&nbsp;theme&nbsp;for&nbsp;one&nbsp;individual&nbsp;widget,&nbsp;you&nbsp;can&nbsp;wrap&nbsp;the&nbsp;widget&nbsp;in&nbsp;a&nbsp;Theme&nbsp;widget,</i><br/><i>&nbsp;set&nbsp;the&nbsp;data&nbsp;property&nbsp;of&nbsp;the&nbsp;Theme&nbsp;widget&nbsp;to&nbsp;a&nbsp;custom&nbsp;ThemeData,</i><br/><i>&nbsp;and&nbsp;the&nbsp;child&nbsp;of&nbsp;the&nbsp;Theme&nbsp;widget&nbsp;to&nbsp;the&nbsp;individual&nbsp;widget&nbsp;you&nbsp;want&nbsp;the&nbsp;theme&nbsp;to&nbsp;be&nbsp;used&nbsp;on</i><br/><i>&nbsp;e.g.&nbsp;Theme(data:&nbsp;*theme*,&nbsp;child:&nbsp;FlatButton())&nbsp;will&nbsp;use&nbsp;a&nbsp;custom&nbsp;theme&nbsp;that&nbsp;only&nbsp;effects&nbsp;that&nbsp;FlatButton</i><br/><br/>
+<b>Copying&nbsp;a&nbsp;theme&nbsp;</b><br/>&nbsp;<i>&nbsp;For&nbsp;some&nbsp;theme&nbsp;types&nbsp;it's&nbsp;possible&nbsp;to&nbsp;copy&nbsp;the&nbsp;closest&nbsp;theme&nbsp;data&nbsp;by&nbsp;accessing&nbsp;[Widget]Theme.of(context).copyWith(*changes*)</i><br/><i>&nbsp;e.g.&nbsp;SliderTheme.of(context).copyWith(thumbShape:&nbsp;RoundSliderThumbShape(enabledThumbRadius:&nbsp;15.0))</i><br/><hr><br/>
+<h1 id="Naming conventions">13. Naming conventions</h1><hr><b>Classes&nbsp;</b><br/>&nbsp;<i>&nbsp;PascalCase,&nbsp;e.g.&nbsp;class&nbsp;IconContent</i><br/><b>Fields&nbsp;and&nbsp;methods&nbsp;</b><br/>&nbsp;<i>&nbsp;camelCase,&nbsp;e.g.&nbsp;String&nbsp;toString()</i><br/><b>Constants&nbsp;</b><br/>&nbsp;<i>&nbsp;camelCase&nbsp;and&nbsp;always&nbsp;start&nbsp;with&nbsp;a&nbsp;'k',&nbsp;e.g.&nbsp;const&nbsp;kBackgroundColor&nbsp;=&nbsp;Color(0xFF1D1E33)</i><br/><b>Dart&nbsp;file&nbsp;names&nbsp;</b><br/>&nbsp;<i>&nbsp;snake_case,&nbsp;e.g.&nbsp;icon_content.dart</i><br/><hr><br/>
+<h1 id="Structuring projects">14. Structuring projects</h1><hr>Separate&nbsp;out&nbsp;pages&nbsp;to&nbsp;their&nbsp;own&nbsp;dart&nbsp;files<br/>
+Sample&nbsp;file&nbsp;structure&nbsp;(lib/)<br/>
+<i>&nbsp;&nbsp;*&nbsp;components/reusable_card.dart&nbsp;(custom&nbsp;widget)</i><br/><i>&nbsp;&nbsp;*&nbsp;components/other_widget.dart&nbsp;(custom&nbsp;widget)</i><br/><i>&nbsp;&nbsp;*&nbsp;screens/input_page.dart&nbsp;(page&nbsp;widget&nbsp;class)</i><br/><i>&nbsp;&nbsp;*&nbsp;screens/other_page.dart&nbsp;(page&nbsp;class)</i><br/><i>&nbsp;&nbsp;*&nbsp;services/weather.dart&nbsp;(service&nbsp;class)</i><br/><i>&nbsp;&nbsp;*&nbsp;services/networking.dart&nbsp;(service&nbsp;class)</i><br/><i>&nbsp;&nbsp;*&nbsp;utilities/constants.dart&nbsp;(project&nbsp;constants)</i><br/><i>&nbsp;&nbsp;*&nbsp;main.dart</i><br/><br/>
+<b>Import&nbsp;a&nbsp;file&nbsp;in&nbsp;the&nbsp;lib&nbsp;folder&nbsp;from&nbsp;a&nbsp;subfolder&nbsp;</b><br/>&nbsp;<i>&nbsp;import&nbsp;'package:app_name/constants.dart';</i><br/><br/>
+main.dart&nbsp;is&nbsp;mainly&nbsp;used&nbsp;for&nbsp;setting&nbsp;the&nbsp;theme&nbsp;of&nbsp;the&nbsp;app,<br/>
+<i>&nbsp;and&nbsp;constructs&nbsp;a&nbsp;widget&nbsp;from&nbsp;another&nbsp;file,&nbsp;e.g.&nbsp;input_page.dart,</i><br/><i>&nbsp;which&nbsp;is&nbsp;set&nbsp;in&nbsp;the&nbsp;home&nbsp;property&nbsp;of&nbsp;the&nbsp;MaterialApp&nbsp;widget</i><br/><br/>
+<b>main.dart&nbsp;structure&nbsp;</b><br/>&nbsp;<i>&nbsp;*imports*</i><br/><i>&nbsp;&nbsp;*main()&nbsp;calling&nbsp;runApp()*</i><br/><i>&nbsp;&nbsp;*app&nbsp;widget&nbsp;class&nbsp;containing&nbsp;theme&nbsp;data,&nbsp;the&nbsp;widget&nbsp;that&nbsp;is&nbsp;called&nbsp;by&nbsp;runApp()*</i><br/><hr><br/>
+<h1 id="App Background image">15. App Background image</h1><hr>1)&nbsp;In&nbsp;your&nbsp;Scaffold,&nbsp;set&nbsp;the&nbsp;body&nbsp;property&nbsp;to&nbsp;a&nbsp;Container<br/>
+2)&nbsp;In&nbsp;your&nbsp;new&nbsp;Container,&nbsp;set&nbsp;its&nbsp;decoration&nbsp;property&nbsp;to&nbsp;a&nbsp;BoxDecoration<br/>
+3)&nbsp;In&nbsp;your&nbsp;new&nbsp;BoxDecoration,&nbsp;set&nbsp;its&nbsp;image&nbsp;property&nbsp;to&nbsp;a&nbsp;DecorationImage<br/>
+4)&nbsp;In&nbsp;your&nbsp;new&nbsp;DecorationImage,&nbsp;set&nbsp;its&nbsp;image&nbsp;property&nbsp;to&nbsp;an&nbsp;AssetImage&nbsp;(or&nbsp;NetworkImage)<br/>
+5)&nbsp;Still&nbsp;in&nbsp;your&nbsp;DecorationImage,&nbsp;set&nbsp;its&nbsp;fit&nbsp;property&nbsp;to&nbsp;BoxFit.cover<br/>
+<hr><br/>
+<h1 id="ColorFilter on DecorationImage">16. ColorFilter on DecorationImage</h1><hr><b>DecorationImage&nbsp;colorFilter&nbsp;</b><br/>&nbsp;<i>&nbsp;*example*&nbsp;colorFilter:&nbsp;ColorFilter.mode(Colors.white.withOpacity(0.8),&nbsp;BlendMode.dstATop),</i><br/><hr><br/>
+<h1 id="Margins">17. Margins</h1><hr><b>Column/Row&nbsp;children&nbsp;spacing&nbsp;</b><br/>&nbsp;<i>&nbsp;MainAxisAlignment.[spaceEvenly/spaceBetween]</i><br/><br/>
+<b>EdgeInsets&nbsp;</b><br/>&nbsp;<i>&nbsp;EdgeInsets.symmetric()&nbsp;[vertical&nbsp;and/or&nbsp;horizontal],&nbsp;EdgeInsets.all(uniform),&nbsp;EdgeInsets.only(left,top,etc),&nbsp;EdgeInsets.fromLTRB(left,&nbsp;top,&nbsp;etc)</i><br/><br/>
+<b>SizedBox&nbsp;</b><br/>&nbsp;<i>&nbsp;Add&nbsp;space&nbsp;between&nbsp;children&nbsp;by&nbsp;adding&nbsp;a&nbsp;SizedBox&nbsp;widget&nbsp;between&nbsp;them&nbsp;(only&nbsp;need&nbsp;to&nbsp;set&nbsp;height&nbsp;if&nbsp;it's&nbsp;in&nbsp;a&nbsp;Column,&nbsp;only&nbsp;width&nbsp;if&nbsp;Row)</i><br/><hr><br/>
+<h1 id="Sizing">18. Sizing</h1><hr>-&nbsp;When&nbsp;widgets&nbsp;should&nbsp;take&nbsp;up&nbsp;as&nbsp;much&nbsp;space&nbsp;as&nbsp;possible&nbsp;inside&nbsp;a&nbsp;Column&nbsp;or&nbsp;a&nbsp;Row,&nbsp;wrap&nbsp;the&nbsp;widget&nbsp;with&nbsp;an&nbsp;Expanded&nbsp;widget<br/>
+-&nbsp;When&nbsp;working&nbsp;with&nbsp;Rows&nbsp;and&nbsp;Columns,&nbsp;unless&nbsp;mainAxisSize&nbsp;is&nbsp;specified&nbsp;to&nbsp;MainAxisSize.min,&nbsp;they&nbsp;will&nbsp;try&nbsp;to&nbsp;take&nbsp;up&nbsp;as&nbsp;much&nbsp;<br/>
+	horizontal/vertical&nbsp;space&nbsp;as&nbsp;they&nbsp;can,&nbsp;even&nbsp;if&nbsp;not&nbsp;required<br/>
+-&nbsp;Setting&nbsp;width&nbsp;or&nbsp;height&nbsp;to&nbsp;double.infinity&nbsp;will&nbsp;make&nbsp;them&nbsp;take&nbsp;up&nbsp;100%&nbsp;of&nbsp;the&nbsp;space&nbsp;available&nbsp;to&nbsp;them<br/>
+-&nbsp;CrossAxisAlignment.stretch&nbsp;will&nbsp;stretch&nbsp;children&nbsp;of&nbsp;a&nbsp;Column/Row&nbsp;to&nbsp;take&nbsp;up&nbsp;100%&nbsp;of&nbsp;the&nbsp;space&nbsp;available&nbsp;to&nbsp;them<br/>
+	without&nbsp;requiring&nbsp;you&nbsp;to&nbsp;set&nbsp;the&nbsp;width/height&nbsp;properties&nbsp;on&nbsp;the&nbsp;children<br/>
+<b>-&nbsp;IntrinsicWidth/IntrinsicHeight&nbsp;</b><br/>&nbsp;<i>&nbsp;if&nbsp;you&nbsp;want&nbsp;to&nbsp;set&nbsp;the&nbsp;width&nbsp;of&nbsp;all&nbsp;items&nbsp;in&nbsp;a&nbsp;Column&nbsp;to&nbsp;the&nbsp;largest&nbsp;item's&nbsp;width,</i><br/><i>&nbsp;	 wrap the Column inside an IntrinsicWidth</i><br/>-&nbsp;To&nbsp;get&nbsp;the&nbsp;max&nbsp;width/height,&nbsp;wrap&nbsp;your&nbsp;widget&nbsp;in&nbsp;a&nbsp;LayoutBuilder<br/>
+<hr><br/>
+<h1 id="Alignment">19. Alignment</h1><hr><b>Column/Row&nbsp;children&nbsp;alignment&nbsp;</b><br/>&nbsp;<i>&nbsp;mainAxisAlignment&nbsp;specifies&nbsp;where&nbsp;on&nbsp;the&nbsp;main&nbsp;axis&nbsp;(horizontal/vertical)&nbsp;to&nbsp;align&nbsp;the&nbsp;children,</i><br/><i>&nbsp;	also there's crossAxisAlignment.[start/center/end], that will arrange itself according to the largest children, see example *1</i><br/><i>&nbsp;	* note: if we want to align to the end of the parent's width, add a Container() with a width/height set to double.infinity</i><br/><b>CrossAxisAlignment.baseline&nbsp;</b><br/>&nbsp;<i>&nbsp;Aligns&nbsp;all&nbsp;Text&nbsp;widgets&nbsp;in&nbsp;the&nbsp;Column/Row&nbsp;to&nbsp;the&nbsp;same&nbsp;lower&nbsp;vertical&nbsp;position,&nbsp;*note*&nbsp;requires&nbsp;setting&nbsp;the&nbsp;textBaseline&nbsp;property&nbsp;of&nbsp;the&nbsp;Column/Row&nbsp;as&nbsp;well</i><br/><hr><br/>
+<h1 id="Hot reload/restart">20. Hot reload/restart</h1><hr>-&nbsp;Hot&nbsp;reload&nbsp;only&nbsp;works&nbsp;on&nbsp;code&nbsp;inside&nbsp;"build(BuildContext&nbsp;ctx)"&nbsp;methods,&nbsp;everything&nbsp;else&nbsp;requires&nbsp;a&nbsp;hot&nbsp;restart<br/>
+-&nbsp;Except&nbsp;for&nbsp;stuff&nbsp;called&nbsp;inside&nbsp;setState()&nbsp;statements<br/>
+<hr><br/>
+<h1 id="Widget base classes">21. Widget base classes</h1><hr><b>StatelessWidget&nbsp;</b><br/>&nbsp;<i>&nbsp;sort&nbsp;of&nbsp;a&nbsp;static&nbsp;widget&nbsp;that&nbsp;isn't&nbsp;meant&nbsp;to&nbsp;be&nbsp;changed&nbsp;during&nbsp;runtime</i><br/><b>StatefulWidget&nbsp;</b><br/>&nbsp;<i>&nbsp;widget&nbsp;with&nbsp;state&nbsp;that&nbsp;may&nbsp;change&nbsp;during&nbsp;runtime,&nbsp;put&nbsp;state&nbsp;+&nbsp;UI&nbsp;inside&nbsp;the&nbsp;class&nbsp;that&nbsp;extends&nbsp;State&lt;T&gt;</i><br/><i>&nbsp;			** note: use setState() to update visible widgets (or even for invisible state?)</i><br/><hr><br/>
+<h1 id="Auto-completes">22. Auto-completes</h1><hr>--Widgets:<br/>
+<b>		stless&nbsp;</b><br/>&nbsp;<i>&nbsp;outputs&nbsp;a&nbsp;stateless&nbsp;widget&nbsp;class&nbsp;template</i><br/><b>		stful&nbsp;</b><br/>&nbsp;<i>&nbsp;outputs&nbsp;a&nbsp;stateful&nbsp;widget&nbsp;class&nbsp;template</i><br/><b>		stanim&nbsp;</b><br/>&nbsp;<i>&nbsp;outputs&nbsp;a&nbsp;stateful&nbsp;widget&nbsp;class&nbsp;with&nbsp;AnimationController&nbsp;template</i><br/>--Iterating:<br/>
+<b>		itar&nbsp;</b><br/>&nbsp;<i>&nbsp;iterates&nbsp;over&nbsp;an&nbsp;array</i><br/><b>		iter&nbsp;</b><br/>&nbsp;<i>&nbsp;iterate</i><br/><hr><br/>
+<h1 id="Packages">23. Packages</h1><hr>Go&nbsp;to&nbsp;<a href="https://pub.dev/flutter">https://pub.dev/flutter</a>&nbsp;to&nbsp;find&nbsp;packages<br/>
+<br/>
+Importing&nbsp;packages&nbsp;can&nbsp;be&nbsp;done&nbsp;by&nbsp;writing:<br/>
+<i>&nbsp;import 'dart:math'; // Random type, pow() [power] etc</i><br/><i>&nbsp;import 'dart:io' show Platform; // import only Platform from dart:io</i><br/><i>&nbsp;import 'dart:io' hide Platform; // import everything EXCEPT Platform from dart:io</i><br/><i>&nbsp;import 'package:app_name/file_in_project.dart'; // import your own dart file</i><br/><i>&nbsp;import 'package:http/http.dart' as http; // import dart file within a new namespace(?),</i><br/><i>&nbsp;// i.e. 'http' in here, so get() in http.dart becomes http.get() instead when we use it</i><br/><br/>
+Useful&nbsp;packages:<br/>
+<ul><li>http</li><li>dart:math (Random, pow(), etc)</li><li>dart:io (sleep, etc)</li><li>dart:convert (JSON)</li><li>flutter_spinkit (spinning loading widgets)</li></ul><hr><br/>
+<h1 id="Data types">24. Data types</h1><hr>String,&nbsp;int,&nbsp;double,&nbsp;bool,&nbsp;dynamic<br/>
+<b>List&lt;T&gt;&nbsp;</b><br/>&nbsp;<i>&nbsp;insert(),&nbsp;add(),&nbsp;addAll()&nbsp;indexOf(),&nbsp;access&nbsp;items&nbsp;by&nbsp;[]</i><br/><b>Read&nbsp;more&nbsp;about&nbsp;lists&nbsp;</b><br/>&nbsp;<i>&nbsp;<a href="https://dart.dev/guides/libraries/library-tour#collections">https://dart.dev/guides/libraries/library-tour#collections</a></i><br/><b>Map&lt;T1,&nbsp;T2&gt;&nbsp;</b><br/>&nbsp;<i>&nbsp;dictionary&nbsp;*note!*&nbsp;when&nbsp;accessing&nbsp;the&nbsp;Map&nbsp;with&nbsp;a&nbsp;key&nbsp;that&nbsp;doesn't&nbsp;exist,&nbsp;the&nbsp;map&nbsp;will&nbsp;return&nbsp;null.</i><br/><i>&nbsp;No&nbsp;exception&nbsp;will&nbsp;be&nbsp;thrown!&nbsp;e.g.&nbsp;Map&lt;String,int&gt;&nbsp;m&nbsp;=&nbsp;{'x':&nbsp;10};&nbsp;print(m['p']);&nbsp;//&nbsp;prints&nbsp;null</i><br/><i>&nbsp;Assigning&nbsp;to&nbsp;a&nbsp;new&nbsp;key&nbsp;can&nbsp;be&nbsp;done&nbsp;by&nbsp;writing&nbsp;for&nbsp;example&nbsp;m['y']&nbsp;=&nbsp;15;&nbsp;//&nbsp;assigns&nbsp;15&nbsp;to&nbsp;new&nbsp;key&nbsp;'y'&nbsp;in&nbsp;Map&nbsp;m</i><br/><i>&nbsp;Maps&nbsp;also&nbsp;have&nbsp;.keys&nbsp;and&nbsp;.values&nbsp;properties</i><br/><hr><br/>
+<h1 id="Function delegates">25. Function delegates</h1><hr>The&nbsp;"Function"&nbsp;type&nbsp;is&nbsp;a&nbsp;function&nbsp;delegate&nbsp;(i.e.&nbsp;basically&nbsp;Action&nbsp;in&nbsp;C#),&nbsp;can&nbsp;be&nbsp;used&nbsp;like&nbsp;this:<br/>
+{c}int&nbsp;calculate(int&nbsp;n1,&nbsp;int&nbsp;n2,&nbsp;Function&nbsp;calculation)&nbsp;{<br/>
+<i>&nbsp;&nbsp;&nbsp;return&nbsp;calculation(n1,&nbsp;n2);</i><br/><i>&nbsp;}</i><br/><i>&nbsp;//&nbsp;call&nbsp;calculate()</i><br/><i>&nbsp;print(calculate(10,&nbsp;15,&nbsp;add));</i><br/><i>&nbsp;print(calculate(10,&nbsp;15,&nbsp;multiply));</i><br/><br/>
+<i>&nbsp;int&nbsp;add(int&nbsp;n1,&nbsp;int&nbsp;n2)&nbsp;=&gt;&nbsp;n1&nbsp;+&nbsp;n2;</i><br/><i>&nbsp;int&nbsp;multiply(int&nbsp;n1,&nbsp;int&nbsp;n2)&nbsp;=&gt;&nbsp;n1&nbsp;*&nbsp;n2;{/c}</i><br/>And&nbsp;it&nbsp;can&nbsp;also&nbsp;be&nbsp;assigned&nbsp;to&nbsp;a&nbsp;variable:<br/>
+{c}//&nbsp;assign&nbsp;Function&nbsp;to&nbsp;a&nbsp;variable&nbsp;(end&nbsp;with&nbsp;semicolon&nbsp;even&nbsp;if&nbsp;using&nbsp;curly&nbsp;braces):<br/>
+<i>&nbsp;Function&nbsp;calculator&nbsp;=&nbsp;(int&nbsp;n1,&nbsp;int&nbsp;n2,&nbsp;Function&nbsp;calculation)&nbsp;=&gt;&nbsp;calculation(n1,&nbsp;n2);</i><br/><i>&nbsp;print(calculator(1,2,add));{/c}</i><br/><hr><br/>
+<h1 id="constness/finalness">26. constness/finalness</h1><hr>The&nbsp;"final"&nbsp;keyword&nbsp;acts&nbsp;as&nbsp;readonly&nbsp;in&nbsp;C#,&nbsp;it&nbsp;is&nbsp;possible&nbsp;to&nbsp;set&nbsp;it&nbsp;through&nbsp;the&nbsp;constructor&nbsp;but&nbsp;not&nbsp;after&nbsp;the&nbsp;constructor&nbsp;has&nbsp;run,<br/>
+<i>&nbsp;i.e.&nbsp;it&nbsp;can&nbsp;only&nbsp;be&nbsp;set&nbsp;once</i><br/>e.g.&nbsp;final&nbsp;int&nbsp;x&nbsp;=&nbsp;1;<br/>
+or&nbsp;final&nbsp;int&nbsp;x;<br/>
+<br/>
+The&nbsp;"const"&nbsp;keyword&nbsp;acts&nbsp;almost&nbsp;as&nbsp;const&nbsp;in&nbsp;C#,&nbsp;it&nbsp;is&nbsp;a&nbsp;compile-time&nbsp;constant;<br/>
+<i>&nbsp;&nbsp;e.g.&nbsp;const&nbsp;int&nbsp;x&nbsp;=&nbsp;1;&nbsp;//&nbsp;compile-time&nbsp;constant,&nbsp;can't&nbsp;be&nbsp;changed</i><br/><i>&nbsp;however,&nbsp;it&nbsp;is&nbsp;also&nbsp;used&nbsp;to&nbsp;canonicalize&nbsp;values&nbsp;(see&nbsp;*2),&nbsp;so&nbsp;that&nbsp;these&nbsp;objects:</i><br/><i>&nbsp;&nbsp;Point&nbsp;p1&nbsp;=&nbsp;const&nbsp;Point(0,&nbsp;0);</i><br/><i>&nbsp;&nbsp;Point&nbsp;p2&nbsp;=&nbsp;const&nbsp;Point(0,&nbsp;0);</i><br/><i>&nbsp;are&nbsp;the&nbsp;same&nbsp;object&nbsp;-&nbsp;only&nbsp;one&nbsp;object&nbsp;is&nbsp;created&nbsp;here,&nbsp;as&nbsp;seen&nbsp;by&nbsp;using&nbsp;identical(p1,&nbsp;p2);&nbsp;//&nbsp;returns&nbsp;true</i><br/><i>&nbsp;but&nbsp;these&nbsp;are&nbsp;not:</i><br/><i>&nbsp;&nbsp;Point&nbsp;p3&nbsp;=&nbsp;const&nbsp;Point(0,&nbsp;0);</i><br/><i>&nbsp;&nbsp;Point&nbsp;p4&nbsp;=&nbsp;const&nbsp;Point(0,&nbsp;1);</i><br/><br/>
+Putting&nbsp;the&nbsp;"const"&nbsp;keyword&nbsp;before&nbsp;a&nbsp;constructor&nbsp;ensures&nbsp;that&nbsp;the&nbsp;constructor&nbsp;does&nbsp;not&nbsp;have&nbsp;a&nbsp;body,<br/>
+<i>&nbsp;and&nbsp;that&nbsp;all&nbsp;fields&nbsp;in&nbsp;the&nbsp;class&nbsp;must&nbsp;have&nbsp;the&nbsp;"final"&nbsp;keyword&nbsp;(i.e.&nbsp;they&nbsp;have&nbsp;to&nbsp;be&nbsp;final),&nbsp;so&nbsp;that&nbsp;they&nbsp;can&nbsp;be&nbsp;canonicalized</i><br/><br/>
+To&nbsp;have&nbsp;a&nbsp;class-wide&nbsp;const&nbsp;you&nbsp;have&nbsp;to&nbsp;make&nbsp;it&nbsp;static&nbsp;as&nbsp;well,&nbsp;e.g.&nbsp;static&nbsp;const&nbsp;String&nbsp;test&nbsp;=&nbsp;'fest';<br/>
+<hr><br/>
+<h1 id="DateTime">27. DateTime</h1><hr>DateTime.now()<br/>
+<hr><br/>
+<h1 id="Stateful widgets">28. Stateful widgets</h1><hr><b>Lifecycles</b><br/>
+Stateful&nbsp;widgets'&nbsp;State&lt;T&gt;&nbsp;base&nbsp;classes&nbsp;have&nbsp;three&nbsp;main&nbsp;methods;&nbsp;initState(),&nbsp;build(),&nbsp;deactivate()<br/>
+These&nbsp;handle&nbsp;the&nbsp;lifetime&nbsp;of&nbsp;the&nbsp;widget&nbsp;and&nbsp;they&nbsp;can&nbsp;all&nbsp;be&nbsp;overridden&nbsp;by&nbsp;the&nbsp;stateful&nbsp;widget<br/>
+<br/>
+initState()&nbsp;is&nbsp;called&nbsp;when&nbsp;the&nbsp;widget&nbsp;is&nbsp;initialized&nbsp;-&nbsp;if&nbsp;possibe,<br/>
+put&nbsp;resource&nbsp;intensive&nbsp;code&nbsp;here&nbsp;(as&nbsp;initState&nbsp;is&nbsp;only&nbsp;called&nbsp;once)<br/>
+<br/>
+build()&nbsp;is&nbsp;called&nbsp;after&nbsp;initialization&nbsp;and&nbsp;whenever&nbsp;the&nbsp;widget's&nbsp;state&nbsp;is&nbsp;updated&nbsp;(using&nbsp;setState()&nbsp;for&nbsp;example)<br/>
+<br/>
+deactivate()&nbsp;is&nbsp;called&nbsp;when&nbsp;the&nbsp;widget&nbsp;is&nbsp;destroyed&nbsp;(e.g.&nbsp;if&nbsp;switching&nbsp;to&nbsp;another&nbsp;screen)<br/>
+<br/>
+<b>Inheritance</b><br/>
+Consider&nbsp;a&nbsp;stateful&nbsp;widget&nbsp;for&nbsp;a&nbsp;screen,&nbsp;'LocationScreen'<br/>
+LocationScreen&nbsp;extends&nbsp;the&nbsp;StatefulWidget&nbsp;and&nbsp;initializes&nbsp;a&nbsp;new&nbsp;instance&nbsp;of&nbsp;its&nbsp;accompanied&nbsp;State&nbsp;class&nbsp;('_LocationScreenState')<br/>
+<br/>
+_LocationScreenState&nbsp;extends&nbsp;State&lt;LocationScreen&gt;,&nbsp;which&nbsp;gives&nbsp;it&nbsp;access&nbsp;to&nbsp;the&nbsp;lifecycle&nbsp;methods&nbsp;(initState,&nbsp;build,&nbsp;deactivate),<br/>
+but&nbsp;just&nbsp;as&nbsp;importantly,&nbsp;it&nbsp;gets&nbsp;access&nbsp;to&nbsp;the&nbsp;'widget'&nbsp;property,&nbsp;which&nbsp;points&nbsp;to&nbsp;the&nbsp;LocationScreen&nbsp;instance<br/>
+<br/>
+When&nbsp;we&nbsp;need&nbsp;to&nbsp;initialize&nbsp;a&nbsp;widget&nbsp;with&nbsp;some&nbsp;state&nbsp;passed&nbsp;through&nbsp;the&nbsp;constructor&nbsp;of&nbsp;LocationScreen,<br/>
+we&nbsp;can&nbsp;access&nbsp;that&nbsp;state&nbsp;in&nbsp;the&nbsp;_LocationScreenState&nbsp;by&nbsp;tapping&nbsp;into&nbsp;the&nbsp;'widget'&nbsp;property&nbsp;and&nbsp;finding&nbsp;the&nbsp;property&nbsp;we're&nbsp;looking&nbsp;for&nbsp;inside&nbsp;the&nbsp;LocationScreen&nbsp;instance.<br/>
+<br/>
+<b>Example:</b>{c}class&nbsp;LocationScreen&nbsp;extends&nbsp;StatefulWidget&nbsp;{<br/>
+<i>&nbsp;&nbsp;LocationScreen({this.locationWeather});</i><br/><i>&nbsp;&nbsp;final&nbsp;locationWeather;</i><br/><i>&nbsp;&nbsp;@override</i><br/><i>&nbsp;&nbsp;_LocationScreenState&nbsp;createState()&nbsp;=&gt;&nbsp;_LocationScreenState();</i><br/>}<br/>
+<br/>
+class&nbsp;_LocationScreenState&nbsp;extends&nbsp;State&lt;LocationScreen&gt;&nbsp;{<br/>
+<i>&nbsp;&nbsp;@override</i><br/><i>&nbsp;&nbsp;void&nbsp;initState()&nbsp;{</i><br/><i>&nbsp;&nbsp;&nbsp;&nbsp;super.initState();</i><br/><i>&nbsp;&nbsp;&nbsp;&nbsp;print(widget.locationWeather);&nbsp;//&nbsp;accessing&nbsp;the&nbsp;value&nbsp;passed&nbsp;into&nbsp;the&nbsp;widget</i><br/><i>&nbsp;&nbsp;}</i><br/><br/>
+<i>&nbsp;&nbsp;@override</i><br/><i>&nbsp;&nbsp;Widget&nbsp;build(BuildContext&nbsp;context)&nbsp;{</i><br/>	/*&nbsp;build&nbsp;code&nbsp;*/<br/>
+<i>&nbsp;&nbsp;}</i><br/>}<br/>
+<br/>
+{/c}<br/>
+<hr><br/>
+<h1 id="async/await">29. async/await</h1><hr><b>Awaiting&nbsp;multiple&nbsp;async&nbsp;calls:</b>{c}&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;awaits&nbsp;=&nbsp;[for&nbsp;(CoinData&nbsp;c&nbsp;in&nbsp;coins)&nbsp;c.getCoinData(selectedCurrency)];<br/>
+<i>&nbsp;&nbsp;&nbsp;&nbsp;await&nbsp;Future.wait(awaits);{/c}</i><br/><b>Function&nbsp;example&nbsp;</b><br/>&nbsp;<i>&nbsp;<blockquote style="border: 1px solid black; padding: 5px; background-color: #FFFFEE; font-style: italic;"><red>Future</red>&lt;<blue>String</blue>&gt;&nbsp;doAsync()&nbsp;<red>async&nbsp;</red><maroon>{</maroon></i><br/><i>&nbsp;&nbsp;&nbsp;<blue>String</blue>&nbsp;result;</i><br/><i>&nbsp;&nbsp;&nbsp;<red>await&nbsp;</red><red>Future</red>.delayed(Duration(seconds:&nbsp;3),&nbsp;()&nbsp;<maroon>{</maroon></i><br/><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;result&nbsp;=&nbsp;<orange>"test"</orange>;</i><br/><i>&nbsp;&nbsp;&nbsp;<maroon>}</maroon>);</i><br/><i>&nbsp;&nbsp;&nbsp;<red>return&nbsp;</red>result;</i><br/><i>&nbsp;<maroon>}</maroon></blockquote></i><br/><b>Function&nbsp;signature&nbsp;</b><br/>&nbsp;<i>&nbsp;Future&lt;void&gt;&nbsp;doAsync(int&nbsp;stuff)&nbsp;async&nbsp;{&nbsp;}</i><br/><b>Awaiting&nbsp;async&nbsp;function&nbsp;call&nbsp;</b><br/>&nbsp;<i>&nbsp;await&nbsp;doAsync();</i><br/><b>Asynchronous&nbsp;sleep&nbsp;function&nbsp;</b><br/>&nbsp;<i>&nbsp;await&nbsp;Future.delayed(duration,&nbsp;callback);</i><br/><b>Callback&nbsp;function&nbsp;signature&nbsp;(lambda/anonymous&nbsp;function?)&nbsp;</b><br/>&nbsp;<i>&nbsp;()&nbsp;async&nbsp;{&nbsp;await&nbsp;doThing();&nbsp;}</i><br/><hr><br/>
+<h1 id="Syntax">30. Syntax</h1><hr><b>List&nbsp;comprehension:</b>{c}var&nbsp;list1&nbsp;=&nbsp;[for&nbsp;(int&nbsp;x&nbsp;=&nbsp;0;&nbsp;x&nbsp;&lt;&nbsp;5;&nbsp;x++)&nbsp;if&nbsp;(x&nbsp;&lt;&nbsp;3)&nbsp;x&nbsp;*&nbsp;1.5&nbsp;else&nbsp;x&nbsp;*&nbsp;150];<br/>
+print(list1);&nbsp;//&nbsp;[0,&nbsp;1.5,&nbsp;3,&nbsp;450,&nbsp;600]<br/>
+var&nbsp;list2&nbsp;=&nbsp;[for&nbsp;(int&nbsp;x&nbsp;=&nbsp;0;&nbsp;x&nbsp;&lt;&nbsp;5;&nbsp;x++)&nbsp;if&nbsp;(x&nbsp;&gt;&nbsp;0&nbsp;&&&nbsp;x&nbsp;&lt;&nbsp;2)&nbsp;x];<br/>
+print(list2);&nbsp;//&nbsp;[1]<br/>
+[for&nbsp;(int&nbsp;x&nbsp;=&nbsp;0;&nbsp;x&nbsp;&lt;&nbsp;10;&nbsp;x++)&nbsp;print(x)];<br/>
+{/c}<br/>
+<b>Map&nbsp;comprehension:</b>{c}class&nbsp;Fruit&nbsp;{<br/>
+<i>&nbsp;&nbsp;Fruit(this.name,&nbsp;this.id);</i><br/><i>&nbsp;&nbsp;String&nbsp;name;</i><br/><i>&nbsp;&nbsp;int&nbsp;id;</i><br/>}<br/>
+var&nbsp;list&nbsp;=&nbsp;[Fruit('Banana',&nbsp;5),&nbsp;Fruit('Apple',&nbsp;6),&nbsp;Fruit('Rat',&nbsp;0)];<br/>
+var&nbsp;map&nbsp;=&nbsp;{for&nbsp;(Fruit&nbsp;f&nbsp;in&nbsp;list)&nbsp;'${f.id}':&nbsp;f.name};&nbsp;//&nbsp;if&nbsp;and/or&nbsp;else&nbsp;can&nbsp;be&nbsp;used&nbsp;here&nbsp;as&nbsp;well<br/>
+print(map);&nbsp;//&nbsp;{5:&nbsp;Banana,&nbsp;6:&nbsp;Apple,&nbsp;0:&nbsp;Rat}<br/>
+{/c}<br/>
+<b>Spreads:</b>{c}var&nbsp;otherList&nbsp;=&nbsp;[2,3,4];<br/>
+var&nbsp;list&nbsp;=&nbsp;[for&nbsp;(int&nbsp;x&nbsp;=&nbsp;0;&nbsp;x&nbsp;&lt;&nbsp;5;&nbsp;x++)&nbsp;if&nbsp;(x&nbsp;&gt;&nbsp;0&nbsp;&&&nbsp;x&nbsp;&lt;&nbsp;2)&nbsp;x,<br/>
+<i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...otherList];</i><br/>print(list);&nbsp;//&nbsp;[1,&nbsp;2,&nbsp;3,&nbsp;4]<br/>
+{/c}<br/>
+<b>Sample&nbsp;use&nbsp;case&nbsp;for&nbsp;list&nbsp;comprehension:</b>{c}Widget&nbsp;build(BuildContext&nbsp;context)&nbsp;{<br/>
+<i>&nbsp;&nbsp;return&nbsp;Row(</i><br/><i>&nbsp;&nbsp;&nbsp;&nbsp;children:&nbsp;[</i><br/><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;IconButton(icon:&nbsp;Icon(Icons.menu)),</i><br/><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(!isAndroid)&nbsp;...[</i><br/><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Expanded(child:&nbsp;title),</i><br/><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;IconButton(icon:&nbsp;Icon(Icons.search)),</i><br/><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]</i><br/><i>&nbsp;&nbsp;&nbsp;&nbsp;],</i><br/><i>&nbsp;&nbsp;);</i><br/>}{/c}<br/>
+<b>async/await&nbsp;</b><br/>&nbsp;<i>&nbsp;See&nbsp;more&nbsp;in&nbsp;the&nbsp;async/await&nbsp;section</i><br/><b>"*variable*&nbsp;is&nbsp;*class*"&nbsp;</b><br/>&nbsp;<i>&nbsp;returns&nbsp;true&nbsp;if&nbsp;*variable*&nbsp;is&nbsp;of&nbsp;(and/or&nbsp;inherits?)&nbsp;type&nbsp;*class*</i><br/><b>"(*variable*&nbsp;as&nbsp;*class*).*property/method"&nbsp;</b><br/>&nbsp;<i>&nbsp;cast&nbsp;and&nbsp;perform&nbsp;method&nbsp;call&nbsp;or&nbsp;property&nbsp;get/set</i><br/><b>null&nbsp;coalescing&nbsp;operator&nbsp;</b><br/>&nbsp;<i>&nbsp;String&nbsp;f&nbsp;=&nbsp;null;&nbsp;print(f&nbsp;??&nbsp;"f&nbsp;=&nbsp;null");&nbsp;//&nbsp;if&nbsp;f&nbsp;is&nbsp;not&nbsp;null,&nbsp;prints&nbsp;f,&nbsp;if&nbsp;f&nbsp;is&nbsp;null,&nbsp;prints&nbsp;"f&nbsp;=&nbsp;null"&nbsp;</i><br/><b>null&nbsp;conditional&nbsp;operator&nbsp;</b><br/>&nbsp;<i>&nbsp;obj?.method()</i><br/><b>String&nbsp;interpolation:</b><br/>
+variable&nbsp;access:<br/>
+<blockquote style="border: 1px solid black; padding: 5px; background-color: #FFFFEE; font-style: italic;"><orange>'Text&nbsp;in&nbsp;variable:&nbsp;$variableText,&nbsp;$otherVariableText'</orange>;</blockquote><br/>
+member&nbsp;access:<br/>
+<blockquote style="border: 1px solid black; padding: 5px; background-color: #FFFFEE; font-style: italic;"><orange>'Text&nbsp;in&nbsp;vari:&nbsp;${inst.memberText},&nbsp;${otherInst.otherMemberText}'</orange>;</blockquote><br/>
+<b>try/catch/finally:</b>{c}try&nbsp;{<br/>
+	//&nbsp;do<br/>
+	double&nbsp;p&nbsp;=&nbsp;double.parse('ab');<br/>
+}&nbsp;catch&nbsp;(e)&nbsp;{<br/>
+	//&nbsp;catch<br/>
+	print(e);<br/>
+}&nbsp;finally&nbsp;{<br/>
+	//&nbsp;cleanup<br/>
+}{/c}<br/>
+<b>Exceptions:</b>{c}&nbsp;&nbsp;throw&nbsp;'Error!&nbsp;Something&nbsp;went&nbsp;wrong.';&nbsp;//&nbsp;valid<br/>
+<i>&nbsp;&nbsp;throw&nbsp;FormatException('Invalid&nbsp;format.');&nbsp;//&nbsp;valid&nbsp;and&nbsp;preferred,&nbsp;more&nbsp;helpful{/c}</i><br/><b>Collection&nbsp;literals:</b>{c}	var&nbsp;names&nbsp;=&nbsp;&lt;String&gt;['Seth',&nbsp;'Erik'];&nbsp;//&nbsp;List&lt;String&gt;<br/>
+	var&nbsp;uniqueNames&nbsp;=&nbsp;&lt;String&gt;{'Seth',&nbsp;'Erik'};&nbsp;//&nbsp;Set&lt;String&gt;<br/>
+	var&nbsp;pages&nbsp;=&nbsp;&lt;String,&nbsp;String&gt;{<br/>
+	&nbsp;&nbsp;'index.html':&nbsp;'Homepage',<br/>
+	&nbsp;&nbsp;'robots.txt':&nbsp;'Hints&nbsp;for&nbsp;web&nbsp;robots'<br/>
+	};&nbsp;//&nbsp;Map&lt;String,&nbsp;String&gt;<br/>
+{/c}<br/>
+<b>For&nbsp;loops:</b>{c}for(int&nbsp;i&nbsp;=&nbsp;0;&nbsp;i&nbsp;&lt;&nbsp;7;&nbsp;i++)&nbsp;{<br/>
+	print(i);<br/>
+}<br/>
+<br/>
+for(String&nbsp;fruit&nbsp;in&nbsp;fruits)&nbsp;{<br/>
+	print(fruit);<br/>
+}{/c}<br/>
+<br/>
+<b>Read&nbsp;more&nbsp;about&nbsp;constructors&nbsp;</b><br/>&nbsp;<i>&nbsp;<a href="https://dart.dev/guides/language/language-tour#constructors">https://dart.dev/guides/language/language-tour#constructors</a></i><br/><hr><br/>
+<h1 id="Enums">31. Enums</h1><hr>Enums&nbsp;are&nbsp;defined&nbsp;like&nbsp;this:<br/>
+<i>&nbsp;enum&nbsp;Person&nbsp;{&nbsp;cool1,&nbsp;cool2&nbsp;}</i><br/><hr><br/>
+<h1 id="Inheritance/composition">32. Inheritance/composition</h1><hr><b>Calling&nbsp;a&nbsp;base&nbsp;class'&nbsp;method&nbsp;</b><br/>&nbsp;<i>&nbsp;super.methodName();&nbsp;//&nbsp;calls&nbsp;methodName&nbsp;on&nbsp;inherited&nbsp;base&nbsp;class</i><br/><hr><br/>
+<h1 id="Classes">33. Classes</h1><hr>State&nbsp;classes&nbsp;have&nbsp;access&nbsp;to&nbsp;a&nbsp;'context'&nbsp;(BuildContext)&nbsp;property&nbsp;anywhere&nbsp;inside&nbsp;the&nbsp;class&nbsp;or&nbsp;its&nbsp;methods,&nbsp;as&nbsp;in<br/>
+	rFlutterAlert's&nbsp;Alert(context:&nbsp;context),&nbsp;can&nbsp;be&nbsp;used&nbsp;inside&nbsp;any&nbsp;State&nbsp;class?<br/>
+<br/>
+To&nbsp;make&nbsp;immutable&nbsp;classes,&nbsp;mark&nbsp;all&nbsp;fields&nbsp;as&nbsp;"final",&nbsp;use&nbsp;a&nbsp;"const"&nbsp;constructor<br/>
+<br/>
+To&nbsp;use&nbsp;a&nbsp;class&nbsp;from&nbsp;another&nbsp;file,&nbsp;import&nbsp;it&nbsp;using&nbsp;"import&nbsp;'fileContainingClass.dart';"<br/>
+To&nbsp;make&nbsp;a&nbsp;field&nbsp;private,&nbsp;prefix&nbsp;it&nbsp;with&nbsp;an&nbsp;underscore&nbsp;(_),&nbsp;e.g.<br/>
+String&nbsp;_text;&nbsp;//&nbsp;private&nbsp;field<br/>
+String&nbsp;text;&nbsp;//&nbsp;public&nbsp;field<br/>
+<br/>
+To&nbsp;have&nbsp;a&nbsp;constructor&nbsp;which&nbsp;takes&nbsp;an&nbsp;argument&nbsp;that&nbsp;is&nbsp;named&nbsp;the&nbsp;same&nbsp;as&nbsp;a&nbsp;field,&nbsp;you&nbsp;can&nbsp;assign&nbsp;the&nbsp;value&nbsp;to&nbsp;it&nbsp;by&nbsp;accessing&nbsp;it&nbsp;through<br/>
+	"this",&nbsp;e.g.&nbsp;"this.text&nbsp;=&nbsp;text;"<br/>
+<br/>
+<b>Different&nbsp;types&nbsp;of&nbsp;constructors:</b>{c}class&nbsp;Question&nbsp;{<br/>
+	String&nbsp;text;<br/>
+	bool&nbsp;answer;<br/>
+	/*&nbsp;constructor&nbsp;type&nbsp;1:&nbsp;*/<br/>
+	Question({String&nbsp;q,&nbsp;bool&nbsp;a})&nbsp;{&nbsp;<br/>
+		text&nbsp;=&nbsp;q;<br/>
+		answer&nbsp;=&nbsp;a;<br/>
+	}&nbsp;//&nbsp;Question(q:&nbsp;'Is&nbsp;true?',&nbsp;a:&nbsp;true);<br/>
+<br/>
+	/*&nbsp;constructor&nbsp;type&nbsp;2,&nbsp;equivalent&nbsp;to&nbsp;1:&nbsp;*/<br/>
+	Question({this.text,&nbsp;this.answer});&nbsp;//&nbsp;Question(q:&nbsp;'Is&nbsp;true?',&nbsp;a:&nbsp;true);<br/>
+<br/>
+	/*&nbsp;constructor&nbsp;type&nbsp;3:&nbsp;*/<br/>
+	Question(String&nbsp;q,&nbsp;bool&nbsp;a)&nbsp;{<br/>
+		text&nbsp;=&nbsp;q;<br/>
+		answer&nbsp;=&nbsp;a;<br/>
+	}&nbsp;//&nbsp;Question('Is&nbsp;true?',&nbsp;true);<br/>
+<br/>
+	/*&nbsp;constructor&nbsp;type&nbsp;4,&nbsp;equivalent&nbsp;to&nbsp;3:&nbsp;*/<br/>
+	Question(this.text,&nbsp;this.answer);&nbsp;//&nbsp;Question('Is&nbsp;true?',&nbsp;true);<br/>
+<br/>
+	/*&nbsp;constructor&nbsp;type&nbsp;5&nbsp;(named&nbsp;constructor):&nbsp;*/<br/>
+	Question.meaningOfLife()&nbsp;{<br/>
+		text&nbsp;=&nbsp;"Is&nbsp;there&nbsp;a&nbsp;meaning&nbsp;to&nbsp;life?";<br/>
+		answer&nbsp;=&nbsp;true;<br/>
+	}&nbsp;//&nbsp;Question.meaningOfLife();<br/>
+}{/c}<br/>
+<b>Named&nbsp;constructor:</b>{c}class&nbsp;Point&nbsp;{<br/>
+	num&nbsp;x,&nbsp;y;<br/>
+	Point(this.x,this.y);<br/>
+<br/>
+	Point.zero()&nbsp;{&nbsp;//&nbsp;named&nbsp;constructor&nbsp;-&nbsp;called&nbsp;through&nbsp;Point.zero();<br/>
+		x&nbsp;=&nbsp;0;<br/>
+		y&nbsp;=&nbsp;0;<br/>
+	}<br/>
+}<br/>
+{/c}<br/>
+<hr><br/>
+<h1 id="Functions">34. Functions</h1><hr><b>print()&nbsp;</b><br/>&nbsp;<i>&nbsp;prints&nbsp;to&nbsp;the&nbsp;console&nbsp;of&nbsp;android&nbsp;studio&nbsp;(Run/Debug)</i><br/><b>assert()&nbsp;</b><br/>&nbsp;<i>&nbsp;asserts&nbsp;a&nbsp;statement&nbsp;is&nbsp;true</i><br/><hr><br/>
+<h1 id="Function signatures">35. Function signatures</h1><hr><b>void&nbsp;doSomething(int&nbsp;what,&nbsp;String&nbsp;ever)&nbsp;{}&nbsp;</b><br/>&nbsp;<i>&nbsp;called&nbsp;by&nbsp;doSomething(1,&nbsp;'test');</i><br/><b>void&nbsp;doSomething({int&nbsp;what,&nbsp;String&nbsp;ever)&nbsp;{}&nbsp;</b><br/>&nbsp;<i>&nbsp;called&nbsp;by&nbsp;doSomething(what:&nbsp;1,&nbsp;ever:&nbsp;'test');</i><br/><b>void&nbsp;doSomething(int&nbsp;what,&nbsp;{String&nbsp;ever})&nbsp;{}&nbsp;</b><br/>&nbsp;<i>&nbsp;called&nbsp;by&nbsp;doSomething(1,&nbsp;ever:&nbsp;'test');</i><br/><b>void&nbsp;doSomething(int&nbsp;what,&nbsp;String&nbsp;ever&nbsp;=&nbsp;'test')&nbsp;{}&nbsp;</b><br/>&nbsp;<i>&nbsp;called&nbsp;by&nbsp;doSomething(1);</i><br/><b>void&nbsp;doSomething(int&nbsp;what,&nbsp;String&nbsp;ever)&nbsp;async&nbsp;{}&nbsp;</b><br/>&nbsp;<i>&nbsp;async&nbsp;method,&nbsp;use&nbsp;await&nbsp;to&nbsp;await&nbsp;method&nbsp;calls&nbsp;inside&nbsp;function</i><br/><hr><br/>
+<h1 id="Examples">36. Examples</h1><hr><b>*1&nbsp;crossAxisAlignment.end&nbsp;</b><br/>&nbsp;<i>&nbsp;Column()&nbsp;with&nbsp;three&nbsp;children,&nbsp;crossAxisAlignment&nbsp;set&nbsp;to&nbsp;CrossAxisAlignment.end&nbsp;aligns&nbsp;as&nbsp;follows:&nbsp;('&lt;'&nbsp;is&nbsp;considered&nbsp;part&nbsp;of&nbsp;the&nbsp;child)</i><br/><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;child1</i><br/><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;child2</i><br/><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;&lt;child3</i><br/><br/>
+<b>*2&nbsp;canonicalize&nbsp;values&nbsp;</b><br/>&nbsp;<i>&nbsp;A&nbsp;process&nbsp;for&nbsp;converting&nbsp;data&nbsp;that&nbsp;has&nbsp;more&nbsp;than&nbsp;one&nbsp;possible&nbsp;representation&nbsp;into&nbsp;a&nbsp;"standard"&nbsp;canonical&nbsp;representation.</i><br/><br/>
+This&nbsp;can&nbsp;be&nbsp;done&nbsp;to&nbsp;compare&nbsp;different&nbsp;representations&nbsp;for&nbsp;equivalence,&nbsp;to&nbsp;count&nbsp;the&nbsp;number&nbsp;of&nbsp;distinct&nbsp;data&nbsp;structures,<br/>
+to&nbsp;improve&nbsp;the&nbsp;efficiency&nbsp;of&nbsp;various&nbsp;algorithms&nbsp;by&nbsp;eliminating&nbsp;repeated&nbsp;calculations,<br/>
+or&nbsp;to&nbsp;make&nbsp;it&nbsp;possible&nbsp;to&nbsp;impose&nbsp;a&nbsp;meaningful&nbsp;sorting&nbsp;order.<br/>
+<br/>
+<b>Read&nbsp;more&nbsp;about&nbsp;const&nbsp;constructors&nbsp;</b><br/>&nbsp;<i>&nbsp;<a href="https://stackoverflow.com/questions/21744677/how-does-the-const-constructor-actually-work">https://stackoverflow.com/questions/21744677/how-does-the-const-constructor-actually-work</a></i><br/><br/>
+e.g.<br/>
+{c}var&nbsp;foo1&nbsp;=&nbsp;const&nbsp;Foo(1,&nbsp;1);&nbsp;//&nbsp;#Foo#int#1#int#1<br/>
+var&nbsp;foo2&nbsp;=&nbsp;const&nbsp;Foo(1,&nbsp;1);&nbsp;//&nbsp;#Foo#int#1#int#1<br/>
+var&nbsp;foo3&nbsp;=&nbsp;const&nbsp;Foo(1,&nbsp;2);&nbsp;//&nbsp;$Foo$int$1$int$2<br/>
+var&nbsp;foo4&nbsp;=&nbsp;const&nbsp;Foo(1,&nbsp;3);&nbsp;//&nbsp;$Foo$int$1$int$3<br/>
+<br/>
+var&nbsp;baz1&nbsp;=&nbsp;const&nbsp;Baz(const&nbsp;Foo(1,&nbsp;1),&nbsp;"hello");&nbsp;//&nbsp;$Baz$Foo$int$1$int$1$String$hello<br/>
+var&nbsp;baz2&nbsp;=&nbsp;const&nbsp;Baz(const&nbsp;Foo(1,&nbsp;1),&nbsp;"hello");&nbsp;//&nbsp;$Baz$Foo$int$1$int$1$String$hello<br/>
+{/c}<br/>
+<br/>
+</div></html>
